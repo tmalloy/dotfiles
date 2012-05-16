@@ -7,7 +7,7 @@ FILES=`git ls-tree --name-only HEAD`
 
 cd $HOME
 for FILE in $FILES; do
-    ln --symbolic --interactive $SCRIPT_DIR/$FILE
+    ln -is $SCRIPT_DIR/$FILE
 done
-rm $TARGET_DIR/$SCRIPT_NAME
+rm $SCRIPT_NAME
 
