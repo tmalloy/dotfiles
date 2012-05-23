@@ -31,7 +31,7 @@ inoremap <c-u> <esc>viwUea
 nnoremap <c-O> <c-O>zz
 nnoremap <c-I> <c-I>zz
 nnoremap <c-u> viwU
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" bi"<esc>lea"<esc>
 nnoremap <leader>' bi'<esc>lea'<esc>
@@ -49,7 +49,17 @@ nnoremap <leader>bd :bd<cr>
 nnoremap <leader>noh :noh<cr>
 
 " replace word with last yanked text
-nnoremap <leader>R "_diwp
+" 'mf' sets a mark,
+" A<space><esc> appends a space at the end of the line
+" `f jumps back to the word
+" _diwP deletes it into the black hole buffer and pastes the new word
+" A<backspace><esc> removes the blank space from the end of the line
+" `f jumps back to the word
+" :delm<space>f<cr> removes the mark
+" it's necessary to add a space on the end because otherwise the script
+" is inconsistent depending on whether the word to be replaced is at
+" the end of the line or not
+nnoremap <leader>R mfA<space><esc>`f"_diwPA<backspace><esc>`fb:delm<space>f<cr>
 
 " Set pwd to directory of current file and print it
 nnoremap <leader>cd :lcd %:p:h<cr>:pwd<cr>
@@ -60,6 +70,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>bl :CommandTFlush<cr>\|:CommandTBuffer<cr>
 " }}}
 
 " Vimscript file settings {{{
