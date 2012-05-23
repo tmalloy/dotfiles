@@ -48,6 +48,9 @@ nnoremap <leader><leader> :b#<cr>
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>noh :noh<cr>
 
+" replace word with last yanked text
+nnoremap <leader>R "_diwP
+
 " Set pwd to directory of current file and print it
 nnoremap <leader>cd :lcd %:p:h<cr>:pwd<cr>
 
