@@ -49,7 +49,7 @@ nnoremap <leader>bd :bd<cr>
 nnoremap <leader>noh :noh<cr>
 
 " map blockwise visual mode to leader-v, ctrl is hard to hit
-nnoremap <leader>v <c-V>
+nnoremap <leader>v 0<c-V>
 
 
 " replace word with last yanked text
