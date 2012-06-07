@@ -48,6 +48,10 @@ nnoremap <leader><leader> :b#<cr>
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>noh :noh<cr>
 
+" map blockwise visual mode to leader-v, ctrl is hard to hit
+nnoremap <leader>v <c-V>
+
+
 " replace word with last yanked text
 "
 " 'mf' sets a mark,
@@ -92,7 +96,11 @@ augroup filetype_python
     au!
 
     " line length
-    setlocal textwidth=80
+    setlocal textwidth=79
+
+    " Comment/Uncomment lines from visual mode
+    vnoremap <leader>c I#<esc>:nohl<cr>
+    vnoremap <leader>u :s/^#/<cr>
 
     " Abbreviations
     "autocmd FileType python     :iabbrev <buffer> ret return
