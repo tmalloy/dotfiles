@@ -99,8 +99,9 @@ augroup filetype_python
     setlocal textwidth=79
 
     " Comment/Uncomment lines from visual mode
+    "   :nohl is needed or else comments get highlighted
     vnoremap <leader>c I#<esc>:nohl<cr>
-    vnoremap <leader>u :s/^#/<cr>
+    vnoremap <leader>u :s/^#/<cr>:nohl<cr>
 
     " Abbreviations
     "autocmd FileType python     :iabbrev <buffer> ret return
