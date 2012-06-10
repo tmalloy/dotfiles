@@ -103,6 +103,9 @@ augroup filetype_python
     vnoremap <leader>c I#<esc>:nohl<cr>
     vnoremap <leader>u :s/^#/<cr>:nohl<cr>
 
+    " Comment a single line
+    nnoremap <leader>c :call CommentLine()<cr>
+
     " Abbreviations
     "autocmd FileType python     :iabbrev <buffer> ret return
     "autocmd FileType python     :iabbrev <buffer> return NOPENOPENOPE
@@ -110,6 +113,13 @@ augroup filetype_python
     " Replacements
     " autocmd FileType python     :nnoremap <buffer> <localleader>c 0i#<esc>
 augroup END
+
+function! CommentLine()
+    let save_cursor = getpos(".")
+    <esc>0i#<esc>
+    call setpos('.', save_cursor)
+endfunction
+
 " }}}
     
 " Javascript file settings {{{
@@ -136,5 +146,5 @@ augroup cursor_position
     \ endif
 augroup END
 
-" call pathogen#infect() 
+call pathogen#infect() 
 " }}}
