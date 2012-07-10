@@ -1,13 +1,15 @@
 " Basic options {{{
-call pathogen#runtime_append_all_bundles()
+" run pathogen
+call pathogen#infect() 
 call pathogen#helptags()
 
-set ai                  " auto indenting
+" set ai                  " auto indenting
 set history=100         " keep 100 lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 set hlsearch            " highlight the last searched term
 filetype plugin on      " use the file type plugins
+filetype plugin indent on
 set runtimepath+=~/.vim/indent
 
 set expandtab
@@ -28,8 +30,8 @@ set number
 noremap - ddp
 noremap _ ddkP
 inoremap <c-u> <esc>viwUea
-nnoremap <c-O> <c-O>zz
-nnoremap <c-I> <c-I>zz
+" nnoremap <c-O> <c-O>zz
+" nnoremap <c-I> <c-I>zz
 nnoremap <c-u> viwU
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -100,11 +102,11 @@ augroup filetype_python
 
     " Comment/Uncomment lines from visual mode
     "   :nohl is needed or else comments get highlighted
-    vnoremap <leader>c I#<esc>:nohl<cr>
+    vnoremap <leader>cc I#<esc>:nohl<cr>
     vnoremap <leader>u :s/^#/<cr>:nohl<cr>
 
     " Comment a single line
-    nnoremap <leader>c :call CommentLine()<cr>
+    nnoremap <leader>cc :call CommentLine()<cr>
 
     " Abbreviations
     "autocmd FileType python     :iabbrev <buffer> ret return
@@ -116,7 +118,7 @@ augroup END
 
 function! CommentLine()
     let save_cursor = getpos(".")
-    <esc>0i#<esc>
+    execute "normal! 0i#\<esc>"
     call setpos('.', save_cursor)
 endfunction
 
@@ -146,5 +148,4 @@ augroup cursor_position
     \ endif
 augroup END
 
-call pathogen#infect() 
 " }}}
