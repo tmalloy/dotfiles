@@ -20,6 +20,15 @@ set tabstop=4
 set backupdir=~/.Trash
 set directory=~/.Trash
 
+" color columns pass 80
+set colorcolumn=80
+
+" make grep always search recursively
+set grepprg=grep\ -rnIi
+
+" faster double ctrl-w
+nnoremap <leader>ss <c-w><c-w>
+
 set incsearch
 set switchbuf=usetab
 set hidden
@@ -147,5 +156,38 @@ augroup cursor_position
     \ endif |
     \ endif
 augroup END
+
+" }}}
+
+" Custom functions {{{
+
+function! GrepForCurrentWord()
+    ccl
+    " call setqflist([])
+    call inputsave()
+    let b:tm_grep_folder = input('Folder: ', "", "file")
+    call inputrestore()
+
+    if b:tm_grep_folder == ""
+        let b:tm_grep_folder = "."
+    endif
+
+    execute "grep! " . shellescape(expand("<cword>")) . " " . b:tm_grep_folder
+    cw
+endfunction
+
+nnoremap <leader>gr :call GrepForCurrentWord()<cr>
+
+
+
+" }}}
+
+" Git stuff {{{
+
+ 
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gb :Gbrowse<cr>
+nnoremap <leader>gc :Gcommit<cr>
+
 
 " }}}
