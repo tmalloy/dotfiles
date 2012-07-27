@@ -26,8 +26,6 @@ set colorcolumn=80
 " make grep always search recursively
 set grepprg=grep\ -rnIi
 
-" faster double ctrl-w
-nnoremap <leader>ss <c-w><c-w>
 
 set incsearch
 set switchbuf=usetab
@@ -56,8 +54,11 @@ nnoremap <leader>q :quit<cr>
 
 nnoremap <leader>bs :buffers<cr>
 nnoremap <leader><leader> :b#<cr>
-nnoremap <leader>bd :bd<cr>
+" see plugin/bclose.vim
+nmap <leader>bd <Plug>Kwbd
 nnoremap <leader>noh :noh<cr>
+" faster double ctrl-w
+nnoremap <leader>ss <c-w><c-w>
 
 " map blockwise visual mode to leader-v, ctrl is hard to hit
 nnoremap <leader>v 0<c-V>
