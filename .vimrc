@@ -110,13 +110,13 @@ augroup filetype_python
     " line length
     setlocal textwidth=79
 
-    " Comment/Uncomment lines from visual mode
-    "   :nohl is needed or else comments get highlighted
-    vnoremap <leader>cc I#<esc>:nohl<cr>
-    vnoremap <leader>u :s/^#/<cr>:nohl<cr>
-
-    " Comment a single line
-    nnoremap <leader>cc :call CommentLine()<cr>
+"    " Comment/Uncomment lines from visual mode
+"    "   :nohl is needed or else comments get highlighted
+"    vnoremap <leader>cc I#<esc>:nohl<cr>
+"    vnoremap <leader>u :s/^#/<cr>:nohl<cr>
+"
+"    " Comment a single line
+"    nnoremap <leader>cc :call CommentLine()<cr>
 
     " Abbreviations
     "autocmd FileType python     :iabbrev <buffer> ret return
@@ -126,11 +126,11 @@ augroup filetype_python
     " autocmd FileType python     :nnoremap <buffer> <localleader>c 0i#<esc>
 augroup END
 
-function! CommentLine()
-    let save_cursor = getpos(".")
-    execute "normal! 0i#\<esc>"
-    call setpos('.', save_cursor)
-endfunction
+" function! CommentLine()
+"     let save_cursor = getpos(".")
+"     execute "normal! 0i#\<esc>"
+"     call setpos('.', save_cursor)
+" endfunction
 
 " }}}
     
