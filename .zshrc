@@ -37,3 +37,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/Cellar/sqlite/3.7.13/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/Users/tmalloy/Development/android-sdk-mac_x86/tools:/Users/tmalloy/Development/android-sdk-mac_x86/tools/proguard/bin:/Users/tmalloy/Development/android-sdk-mac_x86/platform-tools:/Users/tmalloy/Development/android-ndk-r6:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/tmalloy/Development/Scripts:/Users/tmalloy/Development/Scripts/ec2/bin:/Users/tmalloy/Development/iOS_Transit/pygb/bin:/Users/tmalloy/Development/embark/admin-bin
+
+PYTHONPATH=$PYTHONPATH:~/Development/ekarrivals
+PYTHONPATH=$PYTHONPATH:~/Development/embark
+export PYTHONPATH
