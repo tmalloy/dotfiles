@@ -52,6 +52,7 @@ nnoremap L $
 inoremap jk <esc>
 nnoremap <leader>w :write<cr>
 nnoremap <leader>q :quit<cr>
+nnoremap <leader>x :x<cr>
 
 nnoremap <leader>bs :buffers<cr>
 nnoremap <leader><leader> :b#<cr>
@@ -213,5 +214,11 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|pyc|o|d)$',
   \ }
+
+" }}}
+
+" TagBar settings {{{
+
+nmap <leader><leader>t :TagbarToggle<CR>
 
 " }}}
