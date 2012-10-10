@@ -87,9 +87,9 @@ nnoremap <leader>cd :lcd %:p:h<cr>:pwd<cr>
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-map <leader>bl :CommandTFlush<cr>\|:CommandTBuffer<cr>
+"map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+"map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+"map <leader>bl :CommandTFlush<cr>\|:CommandTBuffer<cr>
 " }}}
 
 " Vimscript file settings {{{
@@ -201,5 +201,17 @@ let g:syntastic_auto_jump=1
 let g:syntastic_quiet_warnings=1
 let g:syntastic_auto_loc_list=1
 
+
+" }}}
+
+" ctrlp settings {{{
+
+map <leader>f :CtrlP<cr>
+map <leader>bl :CtrlPBuffer<cr>
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|pyc|o|d)$',
+  \ }
 
 " }}}
