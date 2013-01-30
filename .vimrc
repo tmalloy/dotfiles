@@ -18,20 +18,29 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
-set backupdir=~/.Trash
-set directory=~/.Trash
+set nobackup
+set noswapfile
+
+" Keep the cursor at least 10 characters from the edge of the screen
+set scrolloff=10
 
 " color columns pass 80
 set colorcolumn=80
 
+" only do case-sensitive searches when searching for uppercase characters
+set smartcase
+
 " make grep always search recursively
 set grepprg=grep\ -rnIi
+
+" For some reason Y grabs the whole line
+nnoremap Y y$
 
 
 set incsearch
 set switchbuf=usetab
 set hidden
-" set foldlevelstart=0
+
 let mapleader = ","
 let maplocalleader = "\\"
 set number
@@ -47,7 +56,7 @@ nnoremap <leader>" bi"<esc>lea"<esc>
 nnoremap <leader>' bi'<esc>lea'<esc>
 vnoremap <leader>" di""<esc>hp
 vnoremap <leader>' di''<esc>hp
-nnoremap H 0
+nnoremap H ^
 nnoremap L $
 inoremap jk <esc>
 nnoremap <leader>w :write<cr>
@@ -91,6 +100,14 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 "map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 "map <leader>bl :CommandTFlush<cr>\|:CommandTBuffer<cr>
+" }}}
+
+" {{{ MacVim settings
+
+if has("gui_running")
+    set guioptions=-t
+endif
+
 " }}}
 
 " Vimscript file settings {{{
@@ -155,7 +172,9 @@ augroup cursor_position
     autocmd BufReadPost *
     \ if ! exists("g:leave_my_cursor_position_alone") |
     \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \ if expand('%:t') != "COMMIT_EDITMSG" |
     \ exe "normal g'\"" |
+    \ endif |
     \ endif |
     \ endif
 augroup END
@@ -208,6 +227,7 @@ let g:syntastic_auto_loc_list=1
 " ctrlp settings {{{
 
 map <leader>f :CtrlP<cr>
+map <leader>F :CtrlP %:p:h<cr>
 map <leader>bl :CtrlPBuffer<cr>
 
 let g:ctrlp_custom_ignore = {
@@ -219,6 +239,6 @@ let g:ctrlp_custom_ignore = {
 
 " TagBar settings {{{
 
-nmap <leader><leader>t :TagbarToggle<CR>
+"nmap <leader><leader>t :TagbarToggle<CR>
 
 " }}}
