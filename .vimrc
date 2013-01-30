@@ -47,7 +47,7 @@ nnoremap <leader>" bi"<esc>lea"<esc>
 nnoremap <leader>' bi'<esc>lea'<esc>
 vnoremap <leader>" di""<esc>hp
 vnoremap <leader>' di''<esc>hp
-nnoremap H 0
+nnoremap H ^
 nnoremap L $
 inoremap jk <esc>
 nnoremap <leader>w :write<cr>
@@ -219,6 +219,6 @@ let g:ctrlp_custom_ignore = {
 
 " TagBar settings {{{
 
-nmap <leader><leader>t :TagbarToggle<CR>
+"nmap <leader><leader>t :TagbarToggle<CR>
 
 " }}}
