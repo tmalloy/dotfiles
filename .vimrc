@@ -13,13 +13,6 @@ filetype plugin on      " use the file type plugins
 filetype plugin indent on
 set runtimepath+=~/.vim/indent
 
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-
-set nobackup
-set noswapfile
 
 " Keep the cursor at least 10 characters from the edge of the screen
 set scrolloff=10
@@ -36,14 +29,36 @@ set grepprg=grep\ -rnIi
 " For some reason Y grabs the whole line
 nnoremap Y y$
 
+" don't wrap lines
+set nowrap
+
 
 set incsearch
 set switchbuf=usetab
 set hidden
 
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+set nobackup
+set noswapfile
+
 let mapleader = ","
 let maplocalleader = "\\"
 set number
+nnoremap H ^
+nnoremap L $
+inoremap jk <esc>
+nnoremap <leader>w :write<cr>
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>x :x<cr>
+
+nnoremap <leader>bs :buffers<cr>
+nnoremap <leader><leader> :b#<cr>
+" see plugin/bclose.vim
+nmap <leader>bd <Plug>Kwbd
 noremap - ddp
 noremap _ ddkP
 inoremap <c-u> <esc>viwUea
@@ -56,17 +71,6 @@ nnoremap <leader>" bi"<esc>lea"<esc>
 nnoremap <leader>' bi'<esc>lea'<esc>
 vnoremap <leader>" di""<esc>hp
 vnoremap <leader>' di''<esc>hp
-nnoremap H ^
-nnoremap L $
-inoremap jk <esc>
-nnoremap <leader>w :write<cr>
-nnoremap <leader>q :quit<cr>
-nnoremap <leader>x :x<cr>
-
-nnoremap <leader>bs :buffers<cr>
-nnoremap <leader><leader> :b#<cr>
-" see plugin/bclose.vim
-nmap <leader>bd <Plug>Kwbd
 nnoremap <leader>noh :noh<cr>
 " faster double ctrl-w
 nnoremap <leader>ss <c-w><c-w>
