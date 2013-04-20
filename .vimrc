@@ -242,3 +242,15 @@ let g:ctrlp_custom_ignore = {
 "nmap <leader><leader>t :TagbarToggle<CR>
 
 " }}}
+
+" {{{ gitgutter settings
+
+" For gitgutter, make sign column clear
+augroup gitguttergroup 
+    au!
+
+    autocmd BufRead * :highlight clear SignColumn
+
+augroup END    
+
+" }}}
