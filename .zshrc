@@ -47,6 +47,6 @@ eval "$(fasd --init auto)"
 #compinit
 #zstyle ':completion:*' menu select=2
 
-if [[ -f "private.zshrc" ]]; then
-    source private.zshrc
+if [[ -f ~/.zshrc.private ]]; then
+    source ~/.zshrc.private
 fi
