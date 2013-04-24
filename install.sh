@@ -4,6 +4,7 @@ cd `dirname $0`
 SCRIPT_DIR=`pwd`
 SCRIPT_NAME=`basename $0`
 FILES=`git ls-tree --name-only HEAD | grep -v .git`
+FILES=$FILES" private.zshrc"
 
 cd $HOME
 for FILE in $FILES; do
