@@ -13,6 +13,8 @@ filetype plugin on      " use the file type plugins
 filetype plugin indent on
 set runtimepath+=~/.vim/indent
 
+" For go
+set rtp+=$GOROOT/misc/vim
 
 " Keep the cursor at least 10 characters from the edge of the screen
 set scrolloff=10
@@ -257,4 +259,8 @@ augroup gitguttergroup
 
 augroup END    
 
+" }}}
+
+" {{{ Go file settings
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " }}}

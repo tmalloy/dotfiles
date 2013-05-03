@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/gitformat"]
 	path = .vim/bundle/gitformat
 	url = git://github.com/tpope/vim-git.git
+[submodule ".vim/bundle/vim-golang"]
+	path = .vim/bundle/vim-golang
+	url = git://github.com/jnwhiteh/vim-golang.git
