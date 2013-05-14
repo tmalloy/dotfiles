@@ -4,6 +4,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " set ai                  " auto indenting
+set shell=/bin/bash     " fish shell screws up stuff like go integration
 set history=100         " keep 100 lines of history
 set ruler               " show the cursor position
 set wildmenu            " show options when autocompleting a path
