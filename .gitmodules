@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/vim-golang"]
 	path = .vim/bundle/vim-golang
 	url = git://github.com/jnwhiteh/vim-golang.git
+[submodule ".vim/bundle/vim-protobuf"]
+	path = .vim/bundle/vim-protobuf
+	url = git://github.com/uarun/vim-protobuf.git
