@@ -1,7 +1,4 @@
 " Basic options {{{
-" run pathogen
-call pathogen#infect() 
-call pathogen#helptags()
 
 " set ai                  " auto indenting
 set shell=/bin/bash     " fish shell screws up stuff like go integration
@@ -10,8 +7,6 @@ set ruler               " show the cursor position
 set wildmenu            " show options when autocompleting a path
 syntax on               " syntax highlighting
 set hlsearch            " highlight the last searched term
-filetype plugin on      " use the file type plugins
-filetype plugin indent on
 set runtimepath+=~/.vim/indent
 
 " For go
@@ -107,6 +102,27 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 "map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 "map <leader>bl :CommandTFlush<cr>\|:CommandTBuffer<cr>
+" }}}
+
+" {{{ Vundle Setup
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'uarun/vim-protobuf'
+Bundle 'scrooloose/nerdcommenter'
+
+filetype plugin on      " use the file type plugins
+filetype plugin indent on
+
 " }}}
 
 " {{{ MacVim settings
