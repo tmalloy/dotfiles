@@ -119,6 +119,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'uarun/vim-protobuf'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'dag/vim2hs'
 
 filetype plugin on      " use the file type plugins
 filetype plugin indent on
