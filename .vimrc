@@ -62,7 +62,7 @@ noremap _ ddkP
 inoremap <c-u> <esc>viwUea
 " nnoremap <c-O> <c-O>zz
 " nnoremap <c-I> <c-I>zz
-nnoremap <c-u> viwU
+" nnoremap <c-u> viwU
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" bi"<esc>lea"<esc>
