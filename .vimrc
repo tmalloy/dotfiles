@@ -120,6 +120,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'uarun/vim-protobuf'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'dag/vim2hs'
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin on      " use the file type plugins
 filetype plugin indent on
