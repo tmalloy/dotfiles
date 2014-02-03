@@ -5,6 +5,7 @@ alias gca="git commita -a"
 alias gb="git branch"
 
 # Prompt
+Color_Off="\[\033[0m\]"       # Text ReseT
 Yellow="\[\033[0;33m\]"       # Yellow
 Green="\[\033[0;32m\]"        # Green
 Red="\[\033[0;31m\]"          # Red
