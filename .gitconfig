@@ -1,4 +1,10 @@
+[user]
+    name = Taylor Malloy
+    email = mail@taylormalloy.com
 [alias]
 	co = checkout
 [push]
 	default = upstream
+[diff] 
+    color = true
+    context = 10
