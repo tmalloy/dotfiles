@@ -1,3 +1,6 @@
 
 # Set 'B' to rebase from that commit
 bind main B !git rebase -i %(commit)
+
+# Ignore case when searching
+set ignore-case = yes
