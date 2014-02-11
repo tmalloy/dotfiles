@@ -4,6 +4,8 @@ alias gst="git status"
 alias gca="git commita -a"
 alias gb="git branch"
 
+alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
+
 # Prompt
 Color_Off="\[\033[0m\]"       # Text ReseT
 Yellow="\[\033[0;33m\]"       # Yellow
