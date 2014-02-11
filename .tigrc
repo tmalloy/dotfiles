@@ -1,0 +1,3 @@
+
+# Set 'B' to rebase from that commit
+bind main B !git rebase -i %(commit)
