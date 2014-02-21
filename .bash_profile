@@ -5,6 +5,7 @@ alias gca="git commita -a"
 alias gb="git branch"
 alias grc="git rebase --continue"
 alias gra="git rebase --abort"
+alias gco="git checkout"
 
 alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
