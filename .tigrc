@@ -1,6 +1,14 @@
 
 # Set 'B' to rebase from that commit
-bind main B !git rebase -i %(commit)
+bind main B !git rebase -i %(commit)^
+
+# Set 'D' to delete files when in status view
+bind status D !rm %(file)
+
+# Set 'S' to stash objects from the status view
+bind status S !git stash save --keep-index
+bind status P !git stash pop
 
 # Ignore case when searching
 set ignore-case = yes
+
