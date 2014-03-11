@@ -151,8 +151,6 @@ augroup END
 augroup filetype_python
     au!
 
-    " line length
-    setlocal textwidth=79
 
 "    " Comment/Uncomment lines from visual mode
 "    "   :nohl is needed or else comments get highlighted
