@@ -4,6 +4,9 @@
 [alias]
 	co = checkout
     db = delete-branch
+    rb = rebase
+    br = branch
+    mg = merge
 [push]
 	default = upstream
 [diff] 
