@@ -3,6 +3,7 @@
     email = mail@taylormalloy.com
 [alias]
 	co = checkout
+    db = delete-branch
 [push]
 	default = upstream
 [diff] 

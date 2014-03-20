@@ -958,6 +958,11 @@ _git_bisect ()
 	esac
 }
 
+_git_delete_branch ()
+{
+    _git_branch
+}
+
 _git_branch ()
 {
 	local i c=1 only_local_ref="n" has_r="n"
