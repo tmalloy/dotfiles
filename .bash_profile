@@ -1,11 +1,24 @@
 
 alias ts="tig status"
 alias gst="git status"
-alias gca="git commita -a"
-alias gb="git branch"
-alias grc="git rebase --continue"
-alias gra="git rebase --abort"
-alias gco="git checkout"
+
+alias gaa="git add --all"
+alias gca="git commit -a"
+
+alias grsh="git reset --hard HEAD"
+alias grsh1="git reset --soft HEAD^"
+
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
+alias grb2="git rebase --interactive HEAD^^"
+
+alias gpr="git pull --rebase"
+
+alias gp="git push"
+alias gpf="git push --force"
+
+alias gs="git stash"
+alias gsp="git stash pop"
 
 alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
