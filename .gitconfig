@@ -3,7 +3,7 @@
     email = mail@taylormalloy.com
 [alias]
 	co = checkout
-    db = delete-branch
+    bd = delete-branch
     rb = rebase
     br = branch
     mg = merge
@@ -12,3 +12,5 @@
 [diff] 
     color = true
     context = 10
+[color]
+    ui = auto

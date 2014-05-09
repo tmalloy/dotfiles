@@ -1,6 +1,7 @@
-
 alias ts="tig status"
 alias gst="git status"
+
+alias gbr="git branch -a"
 
 alias gaa="git add --all"
 alias gca="git commit -a"
@@ -8,9 +9,17 @@ alias gca="git commit -a"
 alias grsh="git reset --hard HEAD"
 alias grsh1="git reset --soft HEAD^"
 
+alias grbi="git rebase --interactive"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
-alias grb2="git rebase --interactive HEAD^^"
+alias grb2="grbi HEAD~2"
+alias grb3="grbi HEAD~3"
+alias grb4="grbi HEAD~4"
+alias grb5="grbi HEAD~5"
+alias grb6="grbi HEAD~6"
+alias grb7="grbi HEAD~7"
+alias grb8="grbi HEAD~8"
+alias grb9="grbi HEAD~9"
 
 alias gpr="git pull --rebase"
 
