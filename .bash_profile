@@ -29,6 +29,12 @@ alias gpf="git push --force"
 alias gs="git stash"
 alias gsp="git stash pop"
 
+alias gcia="git commit --amend"
+
+alias gcp="git cherry-pick"
+alias gcpa="git cherry-pick --abort"
+
+
 alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
 # Prompt
