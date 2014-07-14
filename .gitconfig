@@ -7,6 +7,7 @@
     rb = rebase
     br = branch
     mg = merge
+    cp = cherry-pick
 [push]
 	default = upstream
 [diff] 
