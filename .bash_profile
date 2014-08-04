@@ -1,3 +1,5 @@
+export EDITOR='vim'
+
 alias ts="tig status"
 alias gst="git status"
 
