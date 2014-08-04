@@ -36,6 +36,8 @@ alias gcia="git commit --amend"
 alias gcp="git cherry-pick"
 alias gcpa="git cherry-pick --abort"
 
+alias gsprbp="git stash; git pull --rebase; git stash pop"
+
 
 alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
