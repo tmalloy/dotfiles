@@ -121,6 +121,7 @@ Bundle 'eventualbuddha/vim-protobuf'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'dag/vim2hs'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'msanders/cocoa.vim'
 
 filetype plugin on      " use the file type plugins
 filetype plugin indent on
