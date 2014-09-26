@@ -1,16 +1,23 @@
 export EDITOR='vim'
 
+alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
+
 # fasd setup
 eval "$(fasd --init auto)"
 alias v='f -e vim'
 
+# git
 alias ts="tig status"
 alias gst="git status"
 
 alias gbr="git branch -a"
 
+alias gls="git log --pretty=oneline"
+
+alias ga="git add"
 alias gaa="git add --all"
 alias gca="git commit -a"
+alias gcia="git commit --amend"
 
 alias grsh="git reset --hard HEAD"
 alias grsh1="git reset --soft HEAD^"
@@ -26,6 +33,8 @@ alias grb6="grbi HEAD~6"
 alias grb7="grbi HEAD~7"
 alias grb8="grbi HEAD~8"
 alias grb9="grbi HEAD~9"
+alias grb10="grbi HEAD~10"
+alias grb11="grbi HEAD~11"
 
 alias gpr="git pull --rebase"
 
@@ -35,7 +44,6 @@ alias gpf="git push --force"
 alias gs="git stash"
 alias gsp="git stash pop"
 
-alias gcia="git commit --amend"
 
 alias gcp="git cherry-pick"
 alias gcpa="git cherry-pick --abort"
@@ -43,7 +51,11 @@ alias gcpa="git cherry-pick --abort"
 alias gsprbp="git stash; git pull --rebase; git stash pop"
 
 
-alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
+# Git auto completion
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
 
 # Prompt
 Color_Off="\[\033[0m\]"       # Text ReseT
@@ -67,8 +79,3 @@ if [ $? -eq 0 ]; then \
     echo "'$Red'" $(__git_ps1); \
   fi)"; \
 fi)'$Color_Off"\$ "
-
-# Git auto completion
-if [ -f ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
-fi
