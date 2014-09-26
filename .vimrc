@@ -61,7 +61,7 @@ noremap _ ddkP
 inoremap <c-u> <esc>viwUea
 " nnoremap <c-O> <c-O>zz
 " nnoremap <c-I> <c-I>zz
-" nnoremap <c-u> viwU
+nnoremap <c-u> viwU
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" bi"<esc>lea"<esc>
@@ -110,9 +110,6 @@ nnoremap <leader>cd :lcd %:p:h<cr>:pwd<cr>
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-"map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-"map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-"map <leader>bl :CommandTFlush<cr>\|:CommandTBuffer<cr>
 au FileType python set colorcolumn=80
 au FileType java set colorcolumn=100
 au FileType scala set colorcolumn=100
@@ -161,35 +158,6 @@ augroup filetyp_vim
     " Comment abbreviations
     autocmd FileType vim        :nnoremap <buffer> <localleader>c I"<space><esc>
 augroup END
-" }}}
-
-" Python file settings {{{
-augroup filetype_python
-    au!
-
-
-"    " Comment/Uncomment lines from visual mode
-"    "   :nohl is needed or else comments get highlighted
-"    vnoremap <leader>cc I#<esc>:nohl<cr>
-"    vnoremap <leader>u :s/^#/<cr>:nohl<cr>
-"
-"    " Comment a single line
-"    nnoremap <leader>cc :call CommentLine()<cr>
-
-    " Abbreviations
-    "autocmd FileType python     :iabbrev <buffer> ret return
-    "autocmd FileType python     :iabbrev <buffer> return NOPENOPENOPE
-
-    " Replacements
-    " autocmd FileType python     :nnoremap <buffer> <localleader>c 0i#<esc>
-augroup END
-
-" function! CommentLine()
-"     let save_cursor = getpos(".")
-"     execute "normal! 0i#\<esc>"
-"     call setpos('.', save_cursor)
-" endfunction
-
 " }}}
     
 " Javascript file settings {{{
