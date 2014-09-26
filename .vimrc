@@ -27,6 +27,8 @@ nnoremap Y y$
 " don't wrap lines
 set nowrap
 
+" Filetypes to ignore
+set wildignore+=*.class
 
 set incsearch
 set switchbuf=usetab
