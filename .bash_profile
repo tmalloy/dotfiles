@@ -1,5 +1,9 @@
 export EDITOR='vim'
 
+# fasd setup
+eval "$(fasd --init auto)"
+alias v='f -e vim'
+
 alias ts="tig status"
 alias gst="git status"
 
