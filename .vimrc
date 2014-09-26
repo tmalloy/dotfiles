@@ -75,6 +75,8 @@ nnoremap <leader>ss <c-w><c-w>
 " map blockwise visual mode to leader-v, ctrl is hard to hit
 nnoremap <leader>v 0<c-V>
 
+" toggle showing column numbers
+nnoremap <c-n><c-n> :set invnumber<CR>
 
 " replace word with last yanked text
 "
