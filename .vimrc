@@ -72,11 +72,21 @@ nnoremap <leader>noh :noh<cr>
 " faster double ctrl-w
 nnoremap <leader>ss <c-w><c-w>
 
+" quick navigation between vim panes
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
 " map blockwise visual mode to leader-v, ctrl is hard to hit
 nnoremap <leader>v 0<c-V>
 
 " toggle showing column numbers
 nnoremap <c-n><c-n> :set invnumber<CR>
+
+" split windows
+nnoremap <leader>vs <c-w>v
+nnoremap <leader>hs <c-w>s
 
 " replace word with last yanked text
 "
