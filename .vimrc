@@ -15,9 +15,6 @@ set rtp+=$GOROOT/misc/vim
 " Keep the cursor at least 10 characters from the edge of the screen
 set scrolloff=10
 
-" color columns pass 80
-set colorcolumn=80
-
 " only do case-sensitive searches when searching for uppercase characters
 set smartcase
 
@@ -102,6 +99,10 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 "map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 "map <leader>bl :CommandTFlush<cr>\|:CommandTBuffer<cr>
+au FileType python set colorcolumn=80
+au FileType java set colorcolumn=100
+au FileType scala set colorcolumn=100
+
 " }}}
 
 " {{{ Vundle Setup
