@@ -44,6 +44,7 @@ alias gpf="git push --force"
 alias gs="git stash"
 alias gsp="git stash pop"
 
+alias gsl="git squash-last"
 
 alias gcp="git cherry-pick"
 alias gcpa="git cherry-pick --abort"
