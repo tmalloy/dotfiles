@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# This script commits all current changes with a throw-away message and then
+# squashes it into the previous commit
+git commit -a -m "asdf"
+
+git squash-last
+

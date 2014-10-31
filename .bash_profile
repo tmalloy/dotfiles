@@ -40,11 +40,13 @@ alias gpr="git pull --rebase"
 
 alias gp="git push"
 alias gpf="git push --force"
+alias gpnb="git push-new-branch"
 
 alias gs="git stash"
 alias gsp="git stash pop"
 
 alias gsl="git squash-last"
+alias gcasl="git commit-all-squash-last"
 
 alias gcp="git cherry-pick"
 alias gcpa="git cherry-pick --abort"

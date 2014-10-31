@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Pushes the current branch as new branch to origin
+
+CURRENT_BRANCH=`git branch | grep \* | cut -f 2 -d " "`
+
+git push -u origin $CURRENT_BRANCH
+
