@@ -64,6 +64,11 @@ alias gcpa="git cherry-pick --abort"
 
 alias gsprbp="git stash; git pull --rebase; git stash pop"
 
+# .ssh/config auto completion
+function _ssh_completion() {
+    perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
+}
+complete -W "$(_ssh_completion)" ssh
 
 # Git auto completion
 if [ -f ~/.git-completion.bash ]; then
