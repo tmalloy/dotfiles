@@ -1,8 +1,7 @@
 #!/bin/bash
 
+source base-git-functions.sh
+
 # Pushes the current branch as new branch to origin
-
-CURRENT_BRANCH=`git branch | grep \* | cut -f 2 -d " "`
-
-git push -u origin $CURRENT_BRANCH
+git push -u origin `tm_git_current_branch`
 

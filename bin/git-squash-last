@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source base-git-functions.sh
+
 # This script effecitively squahes the last two commits together and maintains
 # the earlier of the two commit messages. It does this by checking out a
 # temporary branch, backing up the original branch by two commits, then merging
@@ -7,13 +9,12 @@
 
 MESSAGE=`git log --format=%B -1 HEAD^`
 
-ORIG_BRANCH=`git branch | grep \* | cut -f2 -d' '`
 TEMP_BRANCH=`env LC_CTYPE=C tr -dc "a-zA-Z0-9" < /dev/urandom | head -c 32`
 
-STASH_RESULT=`git stash`
+tm_git_stash
 
 git co -b $TEMP_BRANCH
-git co $ORIG_BRANCH
+git co -
 
 git reset --hard HEAD^^
 git merge $TEMP_BRANCH --squash
@@ -21,8 +22,4 @@ git commit --all -m "$MESSAGE"
 
 git branch -D $TEMP_BRANCH
 
-if [[ $STASH_RESULT != "No local changes to save" ]]
-then
-    git stash pop
-fi
-
+tm_git_stash_pop
