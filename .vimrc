@@ -48,6 +48,8 @@ set number
 nnoremap H ^
 nnoremap L $
 inoremap jk <esc>
+inoremap Jk <esc>
+inoremap JK <esc>
 nnoremap <leader>w :write<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>x :x<cr>
