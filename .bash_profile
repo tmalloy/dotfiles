@@ -80,23 +80,27 @@ fi
 
 # Prompt
 Color_Off="\[\033[0m\]"       # Text ReseT
-Yellow="\[\033[0;33m\]"       # Yellow
-Green="\[\033[0;32m\]"        # Green
-Red="\[\033[0;31m\]"          # Red
+Cyan="\[\033[0;36m\]"          # Red
+Purple="\[\033[0;35m\]"          # Red
 IBlack="\[\033[0;90m\]"       # High Intensity Black
+Red="\[\033[0;31m\]"          # Red
+Green="\[\033[0;32m\]"        # Green
 Time24="\t"
+User="\u"
+Hostname="\h"
 PathShort="\w"
 
-alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
-export PS1=$IBlack$Time24$Color_Off" "$Yellow$PathShort$Color_Off'\
+alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/\1/'"
+export PS1=$IBlack"[ "$User$IBlack"@"$Cyan$Hostname" "$Purple$PathShort$Color_Off'\
 $(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
+  printf "'$Cyan' ("$(__git_ps1); \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     # @4 - Clean repository - nothing to commit
-    echo "'$Green'" $(__git_ps1); \
+    echo "'$Green' ✓'$Cyan')"; \
   else \
     # @5 - Changes to working tree
-    echo "'$Red'" $(__git_ps1); \
+    echo "'$Red' ✗'$Cyan')"; \
   fi)"; \
-fi)'$Color_Off"\$ "
+fi)'" "$IBlack$Time24" ]\n$Color_Off\$ "
