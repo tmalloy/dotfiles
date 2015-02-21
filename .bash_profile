@@ -1,6 +1,8 @@
 export EDITOR='vim'
 
-alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
+if [[ `uname` == 'Darwin' ]]; then
+    alias fixairplay="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
+fi
 
 # add our local bin to the path
 SOURCE="${BASH_SOURCE[0]}"
