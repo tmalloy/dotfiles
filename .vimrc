@@ -30,6 +30,9 @@ set nowrap
 " Filetypes to ignore
 set wildignore+=*.class
 
+" Tab-completion bash style for filenames
+set wildmode=longest,list
+
 set incsearch
 set switchbuf=usetab
 set hidden
