@@ -115,6 +115,10 @@ nnoremap <leader>cd :lcd %:p:h<cr>:pwd<cr>
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
+" quickly jump to a file's directory
+nnoremap <leader>ls :e <C-R>=expand('%:h').'/'<cr><cr>
+
+
 au FileType python set colorcolumn=80
 au FileType java set colorcolumn=100
 au FileType scala set colorcolumn=100
