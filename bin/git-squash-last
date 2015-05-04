@@ -13,6 +13,8 @@ TEMP_BRANCH=`env LC_CTYPE=C tr -dc "a-zA-Z0-9" < /dev/urandom | head -c 32`
 
 tm_git_stash
 
+SAVED_LAST_BRANCH=$(tm_get_last_branch)
+
 git co -b $TEMP_BRANCH
 git co -
 
@@ -22,4 +24,5 @@ git commit --all -m "$MESSAGE"
 
 git branch -D $TEMP_BRANCH
 
+tm_restore_last_branch $SAVED_LAST_BRANCH
 tm_git_stash_pop

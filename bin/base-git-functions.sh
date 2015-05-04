@@ -35,3 +35,21 @@ tm_git_current_branch()
     git branch | grep \* | cut -f2 -d' '
 }
 
+tm_get_last_branch()
+{
+    MESSAGE=$(git co -)
+    if [[ $MESSAGE == *"error"* ]]
+    then
+        echo ""
+    else
+        RES=$(tm_git_current_branch)
+        NOECHO=$(git co -)
+        echo $RES
+    fi
+}
+
+tm_restore_last_branch()
+{
+    git co $1
+    git co -
+}
