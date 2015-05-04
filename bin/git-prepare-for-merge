@@ -1,22 +1,18 @@
 #!/bin/bash
 
-# This script does a pull, rebases the current branch against the supplied
-# branch, and does a push -f. It also compares the current branch and makes
-# sure it starts with PREFIX to prevent an accidental push -f.
+# This script does a pull and rebases the current branch against origin/HEAD
 
 source base-git-functions.sh
 
-MASTER_BRANCH=$1
-PREFIX="taylor/"
-
-if [[ `tm_git_current_branch` == $PREFIX* ]] ;
+BASE_BRANCH=$1
+if [[ $1 == "" ]]
 then
-    git push -f # must push before you pull in case you've rebased since pushing
-    git pull
-    git rb $MASTER_BRANCH
-    git push -f
-else
-    echo "Branch does not start with prefix"
+    BASE_BRANCH="HEAD"
 fi
 
+tm_git_stash
 
+git fetch
+git rebase "origin/"$BASE_BRANCH
+
+tm_git_stash_pop
