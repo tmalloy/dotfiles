@@ -49,7 +49,7 @@ alias grb9="grbi HEAD~9"
 alias grb10="grbi HEAD~10"
 alias grb11="grbi HEAD~11"
 
-alias gpr="git pull --rebase"
+alias gpr="git pull-rebase"
 
 alias gp="git push"
 alias gpf="git push --force"
