@@ -38,7 +38,7 @@ tm_git_current_branch()
 tm_get_last_branch()
 {
     MESSAGE=$(git co -)
-    if [[ $MESSAGE == *"error"* ]]
+    if [[ $MESSAGE == "error: pathspec '-' did not match any file(s) known to git"* ]]
     then
         echo ""
     else
