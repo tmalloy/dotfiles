@@ -132,18 +132,19 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'VundleVim/Vundle.vim'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'fatih/vim-go'
-Bundle 'jdevera/vim-protobuf-syntax'
-Bundle 'tmalloy/nerdcommenter'
-Bundle 'dag/vim2hs'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'msanders/cocoa.vim'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'fatih/vim-go'
+Plugin 'jdevera/vim-protobuf-syntax'
+Plugin 'tmalloy/nerdcommenter'
+Plugin 'dag/vim2hs'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'msanders/cocoa.vim'
 
 call vundle#end()
 
