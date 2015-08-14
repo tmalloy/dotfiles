@@ -129,22 +129,25 @@ au FileType scala set colorcolumn=100
 
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Bundle 'VundleVim/Vundle.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'jdevera/vim-protobuf-syntax'
 Bundle 'tmalloy/nerdcommenter'
 Bundle 'dag/vim2hs'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'msanders/cocoa.vim'
 
-filetype plugin on      " use the file type plugins
+call vundle#end()
+
+"filetype plugin on      " use the file type plugins
 filetype plugin indent on
 
 " }}}
@@ -272,5 +275,5 @@ augroup END
 " }}}
 
 " {{{ Go file settings
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
 " }}}
