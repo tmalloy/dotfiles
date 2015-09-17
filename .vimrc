@@ -45,7 +45,7 @@ set tabstop=4
 set nobackup
 set noswapfile
 
-let mapleader = ","
+let mapleader = " "
 let maplocalleader = "\\"
 set number
 nnoremap H ^
@@ -53,14 +53,14 @@ nnoremap L $
 inoremap jk <esc>
 inoremap Jk <esc>
 inoremap JK <esc>
-nnoremap <leader>w :write<cr>
+nnoremap <leader>s :update<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>x :x<cr>
 
-nnoremap <leader>bs :buffers<cr>
+" nnoremap <leader>bs :buffers<cr>
 nnoremap <leader><leader> :b#<cr>
 " see plugin/bclose.vim
-nmap <leader>bd <Plug>Kwbd
+nmap <leader>ad <Plug>Kwbd
 noremap - ddp
 noremap _ ddkP
 inoremap <c-u> <esc>viwUea
@@ -68,14 +68,14 @@ inoremap <c-u> <esc>viwUea
 " nnoremap <c-I> <c-I>zz
 " nnoremap <c-u> viwU
 nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+" nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" bi"<esc>lea"<esc>
 nnoremap <leader>' bi'<esc>lea'<esc>
 vnoremap <leader>" di""<esc>hp
 vnoremap <leader>' di''<esc>hp
 nnoremap <leader>noh :noh<cr>
 " faster double ctrl-w
-nnoremap <leader>ss <c-w><c-w>
+" nnoremap <leader>ss <c-w><c-w>
 
 " quick navigation between vim panes
 nnoremap <c-h> <c-w>h
@@ -145,6 +145,7 @@ Plugin 'tmalloy/nerdcommenter'
 Plugin 'dag/vim2hs'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'msanders/cocoa.vim'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 
@@ -248,7 +249,7 @@ let g:syntastic_auto_loc_list=1
 
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %:p:h<cr>
-map <leader>bl :CtrlPBuffer<cr>
+map <leader>al :CtrlPBuffer<cr>
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -276,5 +277,35 @@ augroup END
 " }}}
 
 " {{{ Go file settings
+
+" }}}
+
+" {{{ easymotion settings
+
+let g:EasyMotion_startofline = 0 " maintain column position
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+" nmap s <Plug>(easymotion-s)
+ 
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+
+map <leader>w <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
+
 
 " }}}
