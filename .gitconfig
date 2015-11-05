@@ -1,3 +1,5 @@
+[core]
+	excludesfile = /Volumes/Data/Users/tmalloy/.gitignore_global
 [user]
     name = Taylor Malloy
     email = mail@taylormalloy.com
