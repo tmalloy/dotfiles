@@ -1,3 +1,6 @@
 
 # random Xcode file
 *.xcscmblueprint
+
+.DS_Store
+
