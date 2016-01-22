@@ -144,7 +144,6 @@ Plugin 'jdevera/vim-protobuf-syntax'
 Plugin 'tmalloy/nerdcommenter'
 Plugin 'dag/vim2hs'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'msanders/cocoa.vim'
 Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
