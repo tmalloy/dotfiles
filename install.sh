@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # link all files to the home directory, asking about overwrites
 cd `dirname $0`
 SCRIPT_DIR=`pwd`
