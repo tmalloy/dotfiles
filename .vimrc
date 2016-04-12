@@ -28,7 +28,7 @@ nnoremap Y y$
 set nowrap
 
 " Filetypes to ignore
-set wildignore+=*.class
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/.class,*/target
 
 " Tab-completion bash style for filenames
 set wildmode=longest,list
