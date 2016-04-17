@@ -28,7 +28,7 @@ nnoremap Y y$
 set nowrap
 
 " Filetypes to ignore
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/.class,*/target
+set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/.class,*/target
 
 " Tab-completion bash style for filenames
 set wildmode=longest,list
@@ -145,6 +145,7 @@ Plugin 'tmalloy/nerdcommenter'
 Plugin 'dag/vim2hs'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 
@@ -276,6 +277,7 @@ augroup END
 " }}}
 
 " {{{ Go file settings
+let g:go_fmt_autosave = 0
 
 " }}}
 
