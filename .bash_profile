@@ -97,7 +97,7 @@ export PS1=$IBlack"[ "$User$IBlack"@"$Cyan$Hostname" "$Purple$PathShort$Color_Of
 $(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   printf "'$Cyan' ("$(__git_ps1); \
-  echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
+  echo "$(echo `git status` | grep "nothing to commit\|untracked files present" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     # @4 - Clean repository - nothing to commit
     echo "'$Green' ✓'$Cyan')"; \
