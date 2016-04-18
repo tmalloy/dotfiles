@@ -5,8 +5,18 @@ set -e
 cd
 
 CMD=$(which yum || which apt-get || which brew)
+
+function __install_if_missing {
+    if [[ ! -x `which $1` ]]; then
+        echo "Installing $1..."
+        sudo $CMD install -y $1
+    fi
+}
+
 if [[ $? -eq 0 ]]; then
-    sudo $CMD install -y vim tmux
+    __install_if_missing vim
+    __install_if_missing tmux
+    __install_if_missing git
 fi
 
 mkdir development
