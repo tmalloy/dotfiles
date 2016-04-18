@@ -11,4 +11,5 @@ for FILE in $FILES; do
     ln -is $SCRIPT_DIR/$FILE
 done
 rm $SCRIPT_NAME
+rm curl-install.sh
 
