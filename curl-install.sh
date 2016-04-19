@@ -17,6 +17,7 @@ if [[ $? -eq 0 ]]; then
     __install_if_missing vim
     __install_if_missing tmux
     __install_if_missing git
+    __install_if_missing tig
 fi
 
 mkdir development
