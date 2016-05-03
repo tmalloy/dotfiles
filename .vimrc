@@ -24,6 +24,10 @@ set grepprg=grep\ -rnIi
 " For some reason Y grabs the whole line
 nnoremap Y y$
 
+" Don't move the cursor to the beginning of the line when switching between
+" buffers
+set nostartofline
+
 " don't wrap lines
 set nowrap
 
