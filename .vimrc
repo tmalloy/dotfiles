@@ -42,9 +42,9 @@ set switchbuf=usetab
 set hidden
 
 set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
 set nobackup
 set noswapfile
@@ -178,13 +178,24 @@ augroup filetyp_vim
 augroup END
 " }}}
     
+" HTML file settings {{{
+augroup filetype_html
+    autocmd!
+
+    " Return abbreviations
+    autocmd Filetype html setlocal ts=2 sw=2 expandtab
+    
+augroup END
+" }}}
+    
 " Javascript file settings {{{
-augroup filetype_javasript
+augroup filetype_javascript
     autocmd!
 
     " Return abbreviations
     autocmd FileType javascript :iabbrev <buffer> ret return;
     autocmd FileType javascript :iabbrev <buffer> return; NOPENOPENOPE
+    autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
     
 augroup END
 " }}}
