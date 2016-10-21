@@ -32,7 +32,7 @@ set nostartofline
 set nowrap
 
 " Filetypes to ignore
-set wildignore+=*/.git/*,*/node_modules/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/.class,*/target
+set wildignore+=*/.git/*,*/env/*,*/node_modules/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/.class,*/target
 
 " Tab-completion bash style for filenames
 set wildmode=longest,list
