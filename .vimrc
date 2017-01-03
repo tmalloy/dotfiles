@@ -57,7 +57,7 @@ nnoremap L $
 inoremap jk <esc>
 inoremap Jk <esc>
 inoremap JK <esc>
-nnoremap <leader>s :update<cr>
+nnoremap <leader>w :update<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>x :x<cr>
 
@@ -320,7 +320,7 @@ let g:EasyMotion_smartcase = 1
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 
-map <leader>w <Plug>(easymotion-w)
+map <leader>t <Plug>(easymotion-w)
 map <leader>b <Plug>(easymotion-b)
 
 
