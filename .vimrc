@@ -150,6 +150,8 @@ Plugin 'dag/vim2hs'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'rust-lang/rust.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()
 
