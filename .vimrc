@@ -16,6 +16,8 @@ set rtp+=$GOROOT/misc/vim
 set scrolloff=10
 
 " only do case-sensitive searches when searching for uppercase characters
+" (both options necessary to take affect)
+set ignorecase
 set smartcase
 
 " make grep always search recursively
@@ -32,7 +34,7 @@ set nostartofline
 set nowrap
 
 " Filetypes to ignore
-set wildignore+=*/.git/*,*/env/*,*/node_modules/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/.class,*/target
+set wildignore+=*/.git/*,*/env/*,*/node_modules/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/.class,*/dist,*/target
 
 " Tab-completion bash style for filenames
 set wildmode=longest,list
