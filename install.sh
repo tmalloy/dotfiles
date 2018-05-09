@@ -8,7 +8,7 @@ FILES=$'.gitconfig\n.git-completion.bash\n.gitignore_global\nignore\n'$FILES
 
 cd $HOME
 for FILE in $FILES; do
-    ln -is $SCRIPT_DIR/$FILE
+    ln -sfn $SCRIPT_DIR/$FILE
 done
 rm $SCRIPT_NAME
 rm curl-install.sh
