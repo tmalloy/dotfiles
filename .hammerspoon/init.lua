@@ -40,20 +40,40 @@ end)
 --
 --
 
+doublePressWatcher = require("doublePressWatcher")
+altWatcher = doublePressWatcher.newWatcher("alt")
+
 bindArrowKey = function(key, direction)
   local builder = function(modifiers)
+
+    -- because we're using the alt key to access these shortcuts, we take away
+    -- the useful properties of the alt key (moving by word instead of letter).
+    -- So make a double press of alt add it back in.
+    local modifiersWithAlt = {table.unpack(modifiers)}
+    table.insert(modifiersWithAlt, "alt")
+
+
     return function()
-      hs.eventtap.keyStroke(modifiers, direction, 0)
+--        print(table.concat(modifiers, ", "))
+--        print(table.concat(modifiersWithAlt, ", "))
+--        print()
+      if altWatcher.doublePressed then
+        hs.eventtap.keyStroke(modifiersWithAlt, direction, 0)
+      else
+        hs.eventtap.keyStroke(modifiers, direction, 0)
+      end
     end 
   end
 
   emptyFn = builder({})
   shiftFn = builder({"shift"})
+  cmdFn = builder({"cmd"})
   shiftCmdFn = builder({"shift", "cmd"})
 
   -- shift/shift-cmd makes it work with selection as well
   hs.hotkey.bind({"alt"}, key, emptyFn, nil, emptyFn)
   hs.hotkey.bind({"alt", "shift"}, key, shiftFn, nil, shiftFn)
+  hs.hotkey.bind({"alt", "cmd"}, key, cmdFn, nil, cmdFn)
   hs.hotkey.bind({"alt", "shift", "cmd"}, key, shiftCmdFn, nil, shiftCmdFn)
 end
 
