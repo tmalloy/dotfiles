@@ -7,21 +7,33 @@
 --
 --
 
-hs.hotkey.bind({"cmd", "shift"}, "h", function()
-  local muted = hs.audiodevice.defaultOutputDevice():outputMuted()
-  hs.audiodevice.defaultOutputDevice():setOutputMuted(not muted)
-end)
+isMuted = function()
+  return hs.audiodevice.defaultOutputDevice():outputMuted()
+end
+
+toggleMute = function()
+  hs.audiodevice.defaultOutputDevice():setOutputMuted(not isMuted())
+end
 
 volDown = function()
-  local vol = hs.audiodevice.defaultOutputDevice():outputVolume()
-  hs.audiodevice.defaultOutputDevice():setOutputVolume(vol - 5)
+  if isMuted() then
+    toggleMute()
+  else
+    local vol = hs.audiodevice.defaultOutputDevice():outputVolume()
+    hs.audiodevice.defaultOutputDevice():setOutputVolume(vol - 5)
+  end
 end
 
 volUp = function()
-  local vol = hs.audiodevice.defaultOutputDevice():outputVolume()
-  hs.audiodevice.defaultOutputDevice():setOutputVolume(vol + 5)
+  if isMuted() then
+    toggleMute()
+  else
+    local vol = hs.audiodevice.defaultOutputDevice():outputVolume()
+    hs.audiodevice.defaultOutputDevice():setOutputVolume(vol + 5)
+  end
 end
 
+hs.hotkey.bind({"cmd", "shift"}, "h", toggleMute)
 hs.hotkey.bind({"cmd", "shift"}, "j", volDown, nil, volDown)
 hs.hotkey.bind({"cmd", "shift"}, "k", volUp, nil, volUp)
 
