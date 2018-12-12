@@ -81,12 +81,14 @@ bindArrowKey = function(key, direction)
   shiftFn = builder({"shift"})
   cmdFn = builder({"cmd"})
   shiftCmdFn = builder({"shift", "cmd"})
+  cmdCtrlFn = builder({"cmd", "ctrl"})
 
   -- shift/shift-cmd makes it work with selection as well
   hs.hotkey.bind({"alt"}, key, emptyFn, nil, emptyFn)
   hs.hotkey.bind({"alt", "shift"}, key, shiftFn, nil, shiftFn)
   hs.hotkey.bind({"alt", "cmd"}, key, cmdFn, nil, cmdFn)
   hs.hotkey.bind({"alt", "shift", "cmd"}, key, shiftCmdFn, nil, shiftCmdFn)
+  hs.hotkey.bind({"alt", "cmd", "ctrl"}, key, cmdCtrlFn, nil, cmdCtrlFn)
 end
 
 bindArrowKey("h", "left")
