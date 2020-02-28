@@ -1,5 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore_global
+	trustctime = false
 [user]
     name = Taylor Malloy
     email = mail@taylormalloy.com
