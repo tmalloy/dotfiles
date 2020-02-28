@@ -69,6 +69,10 @@ alias gcp="git cherry-pick"
 alias gcpa="git cherry-pick --abort"
 
 alias gsprbp="git stash; git pull --rebase; git stash pop"
+function gbd() {
+  git push --delete origin $1
+  git branch -D $1
+}
 
 # .ssh/config auto completion
 function _ssh_completion() {
