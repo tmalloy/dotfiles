@@ -14,6 +14,8 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 export PATH=$PATH:$DIR/bin
 
+# bell alert sound on mac
+alias notify="afplay /System/Library/Sounds/Ping.aiff -v 2"
 
 # fasd setup
 eval "$(fasd --init auto)"
