@@ -131,34 +131,30 @@ au FileType scala set colorcolumn=100
 
 " }}}
 
-" {{{ Vundle Setup
+" {{{ Plug Setup
 
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'JazzCore/ctrlp-cmatcher'
-Plugin 'majutsushi/tagbar'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'fatih/vim-go'
-Plugin 'jdevera/vim-protobuf-syntax'
-Plugin 'tmalloy/nerdcommenter'
-Plugin 'dag/vim2hs'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
+call plug#begin("~/.vim/plugged")
 
-call vundle#end()
+Plug 'VundleVim/Vundle.vim'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'Lokaltog/vim-powerline'
+Plug 'kien/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'majutsushi/tagbar'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+Plug 'jdevera/vim-protobuf-syntax'
+Plug 'tmalloy/nerdcommenter'
+Plug 'dag/vim2hs'
+Plug 'derekwyatt/vim-scala'
+Plug 'easymotion/vim-easymotion'
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
-"filetype plugin on      " use the file type plugins
-filetype plugin indent on
+call plug#end()
 
 " }}}
 
