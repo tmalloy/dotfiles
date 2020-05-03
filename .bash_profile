@@ -112,3 +112,5 @@ if [ $? -eq 0 ]; then \
     echo "'$Red' ✗'$Cyan')"; \
   fi)"; \
 fi)'" "$IBlack$Time24" ]\n$Color_Off\$ "
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
