@@ -46,6 +46,13 @@ end, nil, function()
 end)
 
 
+-- CtrlP in vim relies on f5 to refresh search results
+ctrl5F5 = function()
+  hs.eventtap.keyStroke({}, "f5", 0)
+end
+hs.hotkey.bind({"ctrl"}, "5", ctrl5F5, nil, ctrl5F5)
+
+
 --
 --
 -- left/down/right up movement/selection
@@ -69,11 +76,22 @@ bindArrowKey = function(key, direction)
 --        print(table.concat(modifiers, ", "))
 --        print(table.concat(modifiersWithAlt, ", "))
 --        print()
-      if altWatcher.doublePressed then
+      
+--      foregroundApp = hs.application.frontmostApplication():name()
+--      if foregroundApp == "iTerm2" then
+----        print(table.concat(modifiersWithAlt, ", "))
+--        print("(" .. table.concat(modifiersWithAlt, ", ") .. ") " .. key)
+--        hs.eventtap.keyStroke({"alt"}, key, 0) -- doesn't work why????
+--      elseif altWatcher.doublePressed then
+        print("(" .. table.concat(modifiersWithAlt, ", ") .. ") " .. direction)
         hs.eventtap.keyStroke(modifiersWithAlt, direction, 0)
-      else
-        hs.eventtap.keyStroke(modifiers, direction, 0)
-      end
+--      else
+--        print("sending modifiers")
+--        for k, v in pairs(modifiers) do
+--          print(v)
+--        end
+--        hs.eventtap.keyStroke(modifiers, direction, 0)
+--      end
     end 
   end
 
@@ -91,7 +109,10 @@ bindArrowKey = function(key, direction)
   hs.hotkey.bind({"alt", "cmd", "ctrl"}, key, cmdCtrlFn, nil, cmdCtrlFn)
 end
 
-bindArrowKey("h", "left")
-bindArrowKey("j", "down")
-bindArrowKey("k", "up")
-bindArrowKey("l", "right")
+bindArrowKey("b", "left")
+bindArrowKey("f", "right")
+
+deleteWord = function()
+  hs.eventtap.keyStroke({"alt"}, "forwarddelete", 0)
+end
+hs.hotkey.bind({"alt"}, "d", deleteWord, nil, deleteWord)
