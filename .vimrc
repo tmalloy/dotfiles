@@ -49,6 +49,7 @@ set softtabstop=2
 set tabstop=2
 
 set nobackup
+set nowritebackup
 set noswapfile
 
 let mapleader = " "
@@ -137,12 +138,9 @@ set nocompatible
 
 call plug#begin("~/.vim/plugged")
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'Lokaltog/vim-powerline'
 Plug 'kien/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
-Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'jdevera/vim-protobuf-syntax'
@@ -153,6 +151,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -267,8 +266,8 @@ map <leader>F :CtrlP %:p:h<cr>
 map <leader>al :CtrlPBuffer<cr>
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|pyc|o|d)$',
+  \ 'dir':  '\v[\/]\.?(git|hg|svn|node_modules|out)$',
+  \ 'file': '\v\.(class|exe|so|pyc|o|d)$',
   \ }
 
 " }}}
