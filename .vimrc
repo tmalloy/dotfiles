@@ -125,10 +125,40 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " quickly jump to a file's directory
 nnoremap <leader>ls :e <C-R>=expand('%:h').'/'<cr><cr>
 
+function StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    normal mz
+    normal Hmy
+    %s/\s\+$//e
+    normal 'yz<CR>
+    normal `z
+  endif
+endfunction
+command! StripTrailingWhitespace call StripTrailingWhitespace()
+
+
+syntax on
+set t_Co=256
+hi Pmenu guibg=black guifg=white ctermbg=black ctermfg=white
+""" Customize pmenu colors
+"func! s:my_colors_setup() abort
+"    " this is an example
+"    hi Pmenu guibg=#d7e5dc gui=NONE
+"    hi PmenuSel guibg=#b7c7b7 gui=NONE
+"    hi PmenuSbar guibg=#bcbcbc
+"    hi PmenuThumb guibg=#585858
+"endfunc
+"
+"augroup colorscheme_coc_setup | au!
+"    au ColorScheme * call s:my_colors_setup()
+"augroup END
+
+filetype plugin on
+filetype plugin indent on
 
 au FileType python set colorcolumn=80
 au FileType java set colorcolumn=100
-au FileType scala set colorcolumn=100
+"au FileType scala set colorcolumn=100
 
 " }}}
 
@@ -151,6 +181,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
@@ -175,6 +206,84 @@ augroup filetyp_vim
     " Comment abbreviations
     autocmd FileType vim        :nnoremap <buffer> <localleader>c I"<space><esc>
 augroup END
+" }}}
+
+" Scala file settings {{{
+
+au BufRead,BufNewFile *.sbt set filetype=scala
+
+" comment support in json, for jsonc coc.nvim config
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+"
+" Below this are coc/metals-focused settings
+"
+
+" You will have a bad experience with diagnostic messages with the default 4000.
+set updatetime=300
+
+" Don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+set signcolumn=yes
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Used in the tab autocompletion for coc
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to either doHover or show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
+
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Toggle panel with Tree Views
+nnoremap <silent> <space>t :<C-u>CocCommand metals.tvp<CR>
+" Toggle Tree View 'metalsPackages'
+nnoremap <silent> <space>tp :<C-u>CocCommand metals.tvp metalsPackages<CR>
+" Toggle Tree View 'metalsCompile'
+nnoremap <silent> <space>tc :<C-u>CocCommand metals.tvp metalsCompile<CR>
+" Toggle Tree View 'metalsBuild'
+nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
+" Reveal current current class (trait or object) in Tree View 'metalsPackages'
+nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
+
 " }}}
     
 " HTML file settings {{{
