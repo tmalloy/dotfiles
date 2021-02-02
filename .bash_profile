@@ -113,4 +113,4 @@ if [ $? -eq 0 ]; then \
   fi)"; \
 fi)'" "$IBlack$Time24" ]\n$Color_Off\$ "
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
