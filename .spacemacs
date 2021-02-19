@@ -38,7 +38,7 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      ;; git
@@ -54,7 +54,7 @@ This function should only modify configuration layer settings."
      ;; syntax-checking
      ;; version-control
      treemacs
-     clojure
+     (clojure :variables clojure-backend 'cider)
      parinfer)
 
 
@@ -526,7 +526,25 @@ dump.")
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
-before packages are loaded.")
+;; before packages are loaded."
+  ;;   (global-company-mode t) ; turn on auto-completion layer
+  (global-superword-mode t)
+  (setq-default evil-symbol-word-search t)
+
+  (require 'clojure-mode)
+  (define-clojure-indent (match 1))
+
+  (setq vc-follow-symlinks nil) ; don't ask to follow when opening symlinked file e.g. .spacemacs for me fs
+
+  (setq scroll-margin 10)
+
+  (setq-default evil-escape-key-sequence "jk")
+  (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+  (define-key evil-normal-state-map (kbd "Y") (kbd "y$"))
+  (define-key evil-normal-state-map (kbd "A") (kbd "$a"))
+  (define-key evil-normal-state-map (kbd "H") (kbd "0w")))
+
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
