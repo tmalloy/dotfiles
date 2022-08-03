@@ -14,12 +14,22 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 export PATH=$PATH:$DIR/bin
 
+# useful for getting bundle id for 1password
+alias bundle-id="mdls -name kMDItemCFBundleIdentifier -r"
+
 # bell alert sound on mac
 alias notify="afplay /System/Library/Sounds/Ping.aiff -v 2"
 
 # fasd setup
 eval "$(fasd --init auto)"
 alias v='f -e vim'
+
+# Change the current directory for a tmux session, which determines
+# the starting dir for new windows/panes:
+function tmux-cwd {
+  tmux command-prompt -I $PWD -p "New session dir:" "attach -c %1"
+}
+
 
 # git
 alias ts="tig status"
@@ -78,7 +88,9 @@ function gbd() {
 function _ssh_completion() {
     perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
 }
-complete -W "$(_ssh_completion)" ssh
+if [ -f ~/.ssh/config ]; then
+  complete -W "$(_ssh_completion)" ssh
+fi
 
 # Git auto completion
 if [ -f ~/.git-completion.bash ]; then
@@ -113,4 +125,4 @@ if [ $? -eq 0 ]; then \
   fi)"; \
 fi)'" "$IBlack$Time24" ]\n$Color_Off\$ "
 
-export PATH="/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
