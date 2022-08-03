@@ -176,23 +176,39 @@ set nocompatible
 
 call plug#begin("~/.vim/plugged")
 
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
-Plug 'jdevera/vim-protobuf-syntax'
 Plug 'tmalloy/nerdcommenter'
-Plug 'dag/vim2hs'
-Plug 'derekwyatt/vim-scala'
 Plug 'easymotion/vim-easymotion'
-Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
+
+"clojure
 Plug 'junegunn/vim-easy-align'
 Plug 'bhurlow/vim-parinfer'
 Plug 'tpope/vim-fireplace'
+
+" python
+Plug 'hynek/vim-python-pep8-indent'
+
+" go
+Plug 'fatih/vim-go'
+
+" protobuf
+Plug 'jdevera/vim-protobuf-syntax'
+
+" rust
+Plug 'rust-lang/rust.vim'
+
+" javascript
+"Plug 'pangloss/vim-javascript'
+"Plug 'jelera/vim-javascript-syntax'
+"Plug 'maxmellon/vim-jsx-pretty'
+
+" scala
+Plug 'derekwyatt/vim-scala'
 
 call plug#end()
 
@@ -239,8 +255,8 @@ augroup filetype_javascript
     autocmd!
 
     " Return abbreviations
-    autocmd FileType javascript :iabbrev <buffer> ret return;
-    autocmd FileType javascript :iabbrev <buffer> return; NOPENOPENOPE
+"    autocmd FileType javascript :iabbrev <buffer> ret return;
+"    autocmd FileType javascript :iabbrev <buffer> return; NOPENOPENOPE
     autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
     
 augroup END
