@@ -20,6 +20,9 @@ alias bundle-id="mdls -name kMDItemCFBundleIdentifier -r"
 # bell alert sound on mac
 alias notify="afplay /System/Library/Sounds/Ping.aiff -v 2"
 
+# quickly launch a clojure nrepl
+alias clj-repl="clojure -Sdeps '{:deps {cider/cider-nrepl {:mvn/version \"0.28.6\"}}}' -M -m nrepl.cmdline --middleware [cider.nrepl/cider-middleware]"
+
 # fasd setup
 eval "$(fasd --init auto)"
 alias v='f -e vim'
