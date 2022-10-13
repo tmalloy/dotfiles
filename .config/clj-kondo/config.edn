@@ -1,0 +1,9 @@
+
+; References:
+;   https://clojure-lsp.io/settings/#custom-clj-kondo-linters
+;   https://github.com/clj-kondo/clj-kondo/blob/master/doc/config.md
+; 
+; Example: https://github.com/clj-kondo/clj-kondo/blob/master/.clj-kondo/config.edn
+
+{:lint-as {mount.core/defstate clojure.core/def}}
+
