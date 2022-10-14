@@ -4,3 +4,8 @@
 
 .DS_Store
 
+.cache/
+.cpcache/
+node_modules/
+
+
