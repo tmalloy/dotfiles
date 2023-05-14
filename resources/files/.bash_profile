@@ -1,4 +1,4 @@
-export EDITOR='vim'
+export EDITOR='nvim'
 export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ `uname` == 'Darwin' ]]; then
