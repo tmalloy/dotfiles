@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Grab the bundle id of an application so you can put it in 1Password so the
+# suggestions feature works.
+
+# Takes a path to an application, e.g. /Applications/Finder.app
+
+APP=$1
+
+BUNDLE_ID=$(mdls -name kMDItemCFBundleIdentifier -r "$APP")
+
+echo $BUNDLE_ID "- Copied to clipboard"
+echo -n $BUNDLE_ID | pbcopy
+

@@ -1,0 +1,11 @@
+{:links
+ [{:path ".bash_profile"}
+  {:path ".config"}
+  {:path ".docker"}
+  {:path ".git-completion.bash"}
+  {:path ".hammerspoon"}
+  {:path ".inputrc"}
+  {:path ".spacemacs"}
+  {:path ".vimrc"}
+  {:path ".xvimrc"}
+  {:path "bin"}]}

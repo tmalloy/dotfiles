@@ -1,0 +1,23 @@
+[init]
+  defaultBranch = main
+[core]
+	trustctime = false
+[user]
+    name = Taylor Malloy
+    email = mail@taylormalloy.com
+[alias]
+	co = checkout
+    bd = delete-branch
+    rb = rebase
+    br = branch
+    mg = merge
+    cp = cherry-pick
+[push]
+	default = upstream
+[pull]
+  rebase = true
+[diff] 
+    color = true
+    context = 10
+[color]
+    ui = auto
