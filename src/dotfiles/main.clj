@@ -39,7 +39,7 @@
 ;        (filter not-empty)
 ;        (map fs/path)))
 
-(defn make-link [relative-path]
+(defn link-file [relative-path]
   (let [source-path (get-source-path relative-path)
         target-path (get-target-path relative-path)]
     (if (fs/exists? target-path)
@@ -48,7 +48,16 @@
 
 (defn link-all-files []
   (let [links (-> links-resource slurp edn/read-string :links)]
-    (doall (map #(make-link (:path %)) links))))
+    (doall (map #(link-file (:path %)) links))))
+
+(defn unlink-file [relative-path]
+  (let [target-path (get-target-path relative-path)]
+    (if (fs/sym-link? target-path)
+      (fs/delete target-path))))
+
+(defn unlink-all-files []
+  (let [links (-> links-resource slurp edn/read-string :links)]
+    (doall (map #(unlink-file (:path %)) links))))
 
 
 (defn add-file [path submodule-url]
@@ -66,7 +75,7 @@
         (assert (fs/exists? target-path) "File does not exist")
         (fs/create-dirs (fs/parent source-path))
         (fs/move target-path source-path)
-        (make-link relative-path)
+        (link-file relative-path)
 
         (-> links-resource
             slurp
@@ -78,13 +87,16 @@
                                    (into [] $))))
             (p/pprint (io/writer links-resource)))))
     nil))
+  
 
-;
 (defn cli-add [{{file :file submodule-url :url} :opts}]
   (add-file file submodule-url))
 
 (defn cli-link [_]
   (link-all-files))
+
+(defn cli-unlink [_]
+  (unlink-all-files))
 
 (defn cli-status [_]
   (println (:out (shell {:out :string :dir (str dotfiles-dir)} "git" "status" "--short"))))
@@ -98,6 +110,7 @@
 (def table
   [{:cmds ["add"]    :fn cli-add  :args->opts [:file]}
    {:cmds ["link"]   :fn cli-link}
+   {:cmds ["unlink"] :fn cli-unlink}
    {:cmds ["status"] :fn cli-status}
    {:cmds []         :fn cli-help}])
 
