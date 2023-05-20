@@ -1,5 +1,6 @@
 {:links
- [{:path ".bash_profile"}
+ [{:path ".bash-preexec.sh"}
+  {:path ".bash_profile"}
   {:path ".config"}
   {:path ".docker"}
   {:path ".git-completion.bash"}

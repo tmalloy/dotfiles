@@ -130,3 +130,5 @@ if [ $? -eq 0 ]; then \
 fi)'" "$IBlack$Time24" ]\n$Color_Off\$ "
 
 export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
