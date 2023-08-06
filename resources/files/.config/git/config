@@ -16,8 +16,22 @@
 	default = upstream
 [pull]
   rebase = true
+[rebase]
+  autoStash = true
 [diff] 
     color = true
     context = 10
 [color]
     ui = auto
+[sequence]
+	editor = interactive-rebase-tool
+[interactive-rebase-tool]
+	inputMoveDown = j
+	inputMoveUp = k
+	inputMoveSelectionDown = Control+j
+	inputMoveSelectionUp = Control+k
+	inputUndo = u
+	inputRedo = Control+r
+	inputScrollStepDown = Control+d
+	inputScrollStepUp = Control+u
+	inputRebase = Enter

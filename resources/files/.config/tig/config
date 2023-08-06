@@ -12,3 +12,21 @@ bind status P !git stash pop
 # Ignore case when searching
 set ignore-case = yes
 
+bind main I !git rebase -i %(commit)^
+bind diff I !git rebase -i %(commit)^
+
+bind main Y !@sh -c "echo %(commit) | pbcopy"
+
+bind main A !git commit --amend
+
+bind main S !git reset --soft %(commit)
+bind main M !git reset --mixed %(commit)
+bind main H !git reset --hard %(commit)
+bind main P !git push
+bind main p !git pull
+
+bind reflog M !git reset --mixed %(commit)
+bind reflog H !git reset --hard %(commit)
+
+bind diff 0 move-first-line
+bind diff G move-last-line
