@@ -55,7 +55,7 @@ bind main M !git reset --mixed %(commit)
 bind main H !git reset --hard %(commit)
 
 set refs-view-date = relative
-bind refs r !sh -c "git rebase -i origin/%(branch) `git rev-parse --abbrev-ref HEAD`"
+bind refs r !sh -c "if [[ \"$(git rev-parse --abbrev-ref HEAD)\" == \"main\" || \"$(git rev-parse --abbrev-ref HEAD)\" == \"origin/\"* ]]; then echo \"\\n\\nRefusing to rebase branch $(git rev-parse --abbrev-ref HEAD)!\\n\\n\"; exit 1; fi && git rebase -i origin/%(branch) `git rev-parse --abbrev-ref HEAD`"
 bind refs c !git checkout --merge %(branch)
 bind refs N @git checkout -b taylor/"%(prompt New branch name: taylor/)"
 # Couldn't get copy to work:
