@@ -9,4 +9,7 @@
   {:path ".spacemacs"}
   {:path ".vimrc"}
   {:path ".xvimrc"}
+  {:path ".zshrc"}
+  {:path "Library/Application Support/Code/User/settings.json"}
+  {:path "Library/Application Support/lazygit/config.yml"}
   {:path "bin"}]}

@@ -1,0 +1,167 @@
+{
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "editor.lightbulb.enabled": "off",
+    "telemetry.telemetryLevel": "off",
+    "editor.autoClosingBrackets": "never",
+    "vim.leader": "<space>",
+    "vim.easymotion": false,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.surround": true,
+    "vim.replaceWithRegister": true,
+    "extensions.experimental.affinity": {
+      "vscodevim.vim": 1
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k",
+            ],
+            "after": [
+                "<Esc>",
+            ],
+        },
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<ctrl>",
+                "s",
+            ],
+            "commands": [
+                "workbench.action.files.save",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+            ],
+            "commands": [
+                "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "<leader>",
+            ],
+            "commands": [
+                "extension.goto-previous-buffer",
+            ],
+        },
+        {
+            "before": [
+                "<ctrl>",
+                "c",
+            ],
+            "after": [
+                "<Esc>",
+            ],
+        },
+        {
+            "before": [
+                "H",
+            ],
+            "after": [
+                "^",
+            ],
+        },
+        {
+            "before": [
+                "Y",
+            ],
+            "after": [
+                "v", "$", "h", "y",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "x",
+            ],
+            "commands": [
+                "workbench.action.files.save",
+                "workbench.action.closeActiveEditor",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "l",
+            ],
+            "commands": [
+                "editor.action.commentLine",
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "d",
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor",
+            ],
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "c",
+            ],
+            "commands": [
+                "editor.action.commentLine",
+            ],
+        },
+    ],
+    "vim.commandLineModeKeyBindings": [
+
+    ],
+    "settingsSync.ignoredExtensions": [
+
+    ],
+    "editor.detectIndentation": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "settingsSync.ignoredSettings": [
+
+    ],
+    "calva.paredit.defaultKeyMap": "strict",
+    "editor.tabSize": 2,
+    "dev.containers.executeInWSL": true,
+    "workbench.settings.applyToAllProfiles": [
+
+
+      
+
+    ],
+    "editor.fontLigatures": false,
+    "go.toolsManagement.autoUpdate": true,
+    "remote.autoForwardPortsSource": "hybrid",
+    "java.debug.settings.exceptionBreakpoint.skipClasses": [
+
+    ],
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "gitlens.telemetry.enabled": false,
+    "stripe.telemetry.enabled": false,
+    // "remote.SSH.useExecServer": false,
+    // "remote.SSH.showLoginTerminal": true,
+    // "remote.SSH.useLocalServer": false,
+}

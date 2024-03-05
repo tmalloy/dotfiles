@@ -18,6 +18,8 @@
   rebase = true
 [rebase]
   autoStash = true
+[merge]
+  autoStash = true
 [diff] 
     color = true
     context = 10
