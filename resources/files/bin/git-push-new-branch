@@ -1,7 +1,0 @@
-#!/bin/bash
-
-source base-git-functions.sh
-
-# Pushes the current branch as new branch to origin
-git push -u origin `tm_git_current_branch`
-

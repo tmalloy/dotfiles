@@ -1,0 +1,73 @@
+# https://jonas.github.io/tig/doc/tigrc.5.html
+
+# ! - Run the command in the foreground with output shown.
+# @ - Perform immediately and skip showing output
+# + - Run the command synchronously, and echo the first line of output to the status bar.
+# ? - Prompt for confirmation
+# < - Exit Tig after executing the command
+# > - Re-open Tig instantly in the last displayed view after executing the command.
+
+set main-view-id = yes
+
+# Set 'B' to rebase from that commit
+bind main B !git rebase -i %(commit)^
+
+# Set 'D' to delete files when in status view
+bind status D !rm %(file)
+
+
+# Ignore case when searching
+set ignore-case = yes
+
+# Moving to first/last line
+bind refs 0 move-first-line
+bind main 0 move-first-line
+bind status 0 move-first-line
+bind status G move-last-line
+bind diff 0 move-first-line
+bind diff G move-last-line
+
+# Interactive rebase
+bind main I !git rebase -i %(commit)^
+bind diff I !git rebase -i %(commit)^"
+
+# Push/pull
+bind refs p !sh -c "git fetch --prune && git merge"
+bind refs P !sh -c "git push --force --set-upstream origin +$(git rev-parse --abbrev-ref HEAD):$(git rev-parse --abbrev-ref HEAD)"
+bind main p !sh -c "git fetch --prune && git merge"
+bind main P !sh -c "git push --force --set-upstream origin +$(git rev-parse --abbrev-ref HEAD):$(git rev-parse --abbrev-ref HEAD)"
+
+# Open Github PR
+bind refs o @sh -c "open https://github.com/Nikola-Software/TeslaMonitor/compare/%(branch)?expand=1"
+bind main o @sh -c "open https://github.com/Nikola-Software/TeslaMonitor/compare/$(git rev-parse --abbrev-ref HEAD)?expand=1"
+
+
+# Other view-specific bindings
+bind status S !git stash save --keep-index
+bind status U !git stash pop
+bind status o @sh -c "open https://github.com/Nikola-Software/TeslaMonitor/compare/$(git rev-parse --abbrev-ref HEAD)?expand=1"
+bind status F !git commit --amend --no-edit
+bind status P !sh -c "git push --force --set-upstream origin +$(git rev-parse --abbrev-ref HEAD):$(git rev-parse --abbrev-ref HEAD)"
+
+set main-view-date = relative
+bind main Y @sh -c "printf %(commit) | pbcopy"
+bind main A !git commit --amend
+bind main S !git reset --soft %(commit)
+bind main M !git reset --mixed %(commit)
+bind main H !git reset --hard %(commit)
+
+set refs-view-date = relative
+bind refs r !sh -c "if [[ \"$(git rev-parse --abbrev-ref HEAD)\" == \"main\" || \"$(git rev-parse --abbrev-ref HEAD)\" == \"origin/\"* ]]; then echo \"\\n\\nRefusing to rebase branch $(git rev-parse --abbrev-ref HEAD)!\\n\\n\"; exit 1; fi && git rebase -i origin/%(branch) `git rev-parse --abbrev-ref HEAD`"
+bind refs c !git checkout --merge %(branch)
+bind refs N @git checkout -b taylor/"%(prompt New branch name: taylor/)"
+# Couldn't get copy to work:
+# bind refs ! @sh -c "git branch -D %(branch) | tr -d '\n' | sed -E 's/.*\(was (.*)\).*/\1/' | pbcopy"
+# If you want force delete in the future:t pu
+# bind refs ! !sh -c "git push -d origin %(branch) && git branch -D %(branch)"
+# bind refs ! ?git branch --delete --force %(branch)
+bind refs ! ?sh -c "set -eux; if [[ \"%(branch)\" == \"$(git rev-parse --abbrev-ref HEAD)\" ]]; then git checkout --merge main; fi; git branch --delete --force %(branch)"
+
+bind reflog M !git reset --mixed %(commit)
+bind reflog H !git reset --hard %(commit)
+bind reflog Y @sh -c "printf %(commit) | pbcopy"
+

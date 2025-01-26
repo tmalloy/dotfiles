@@ -1,0 +1,46 @@
+[init]
+  defaultBranch = main
+[core]
+	trustctime = false
+[user]
+    name = Taylor Malloy
+    email = mail@taylormalloy.com
+[alias]
+	co = checkout
+    bd = delete-branch
+    rb = rebase
+    br = branch
+    mg = merge
+    cp = cherry-pick
+[push]
+	default = upstream
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
+[merge]
+  autoStash = true
+[diff] 
+    color = true
+    context = 10
+[color]
+    ui = auto
+[sequence]
+	editor = interactive-rebase-tool
+[interactive-rebase-tool]
+	inputMoveDown = j
+	inputMoveUp = k
+	inputMoveSelectionDown = Control+j
+	inputMoveSelectionUp = Control+k
+	inputUndo = u
+	inputRedo = Control+r
+	inputScrollStepDown = Control+d
+	inputScrollStepUp = Control+u
+	inputRebase = w
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

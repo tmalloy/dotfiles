@@ -1,0 +1,387 @@
+{
+  "profiles" : [ {
+    "complex_modifications" : {
+      "parameters" : {
+        "basic.simultaneous_threshold_milliseconds" : 50,
+        "basic.to_delayed_action_delay_milliseconds" : 500,
+        "basic.to_if_alone_timeout_milliseconds" : 1000,
+        "basic.to_if_held_down_threshold_milliseconds" : 500
+      },
+      "rules" : [ {
+        "description" : "Alt b/f for word-wise movement",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            },
+            "key_code" : "b"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "left_arrow"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            },
+            "key_code" : "f"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "right_arrow"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option" ]
+            },
+            "key_code" : "d"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option", "fn" ],
+            "key_code" : "delete_forward"
+          } ],
+          "conditions" : [ {
+            "type" : "frontmost_application_unless",
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Meh + h/j/k/l/n/p works like alt",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "n"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "n"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "p"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "j"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "p"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "p"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "p"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_option" ],
+            "key_code" : "p"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Mouse button 4/5 for back/forward",
+        "manipulators" : [ {
+          "from" : {
+            "pointing_button" : "button4"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_command" ],
+            "key_code" : "open_bracket"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "pointing_button" : "button5"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_command" ],
+            "key_code" : "close_bracket"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            },
+            "pointing_button" : "button4"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_command", "left_shift" ],
+            "key_code" : "open_bracket"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_shift" ]
+            },
+            "pointing_button" : "button5"
+          },
+          "to" : [ {
+            "modifiers" : [ "left_command", "left_shift" ],
+            "key_code" : "close_bracket"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "Application shortcuts",
+        "manipulators" : [ {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "s"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Safari\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "f"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Firefox\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "v"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Visual Studio Code\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "t"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"iTerm\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "n"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Notes\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "d"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"TablePlus\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "w"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Slack\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "m"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Messages\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "a"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Music\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "c"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Postman\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "z"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"zoom.us\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "q"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Notes\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "x"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Notion\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "r"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Linear\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "b"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"BBEdit\""
+          } ],
+          "type" : "basic"
+        } ]
+      } ]
+    },
+    "devices" : [ {
+      "identifiers" : {
+        "is_keyboard" : true,
+        "product_id" : 50475,
+        "vendor_id" : 1133
+      },
+      "ignore" : true
+    }, {
+      "identifiers" : {
+        "is_pointing_device" : true,
+        "product_id" : 50475,
+        "vendor_id" : 1133
+      },
+      "ignore" : false
+    }, {
+      "identifiers" : {
+        "is_keyboard" : true,
+        "is_pointing_device" : true,
+        "product_id" : 45091,
+        "vendor_id" : 1133
+      },
+      "ignore" : false
+    }, {
+      "identifiers" : {
+        "is_keyboard" : true,
+        "product_id" : 6519,
+        "vendor_id" : 12951
+      },
+      "treat_as_built_in_keyboard" : true
+    } ],
+    "name" : "Default",
+    "selected" : true,
+    "virtual_hid_keyboard" : {
+      "keyboard_type_v2" : "ansi"
+    }
+  } ]
+}
