@@ -1,0 +1,63 @@
+
+; Help:
+; Karabiner-elements external json generators: https://karabiner-elements.pqrs.org/docs/json/external-json-generators/
+; Generator for finding key codes: https://genesy.github.io/karabiner-complex-rules-generator/
+; Goku: https://github.com/yqrashawn/GokuRakuJoudo#usage
+; Examples: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org
+; Tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
+; From/to: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md#advance2
+;
+; Todo:
+; mod-tap?
+;
+; Workflow:
+; Run `goku` once without args to process file once
+; Rune `gokuw` to watch for changes
+
+{
+ :applications {:iterm ["^com\\.googlecode\\.iterm2$"]}
+
+ :templates {:open "open -a \"%s\""}
+
+ :main
+ [{:des "Alt b/f for word-wise movement"
+   :rules [
+           [{:key :b :modi :left_option} {:key :left_arrow :modi :left_option} :!iterm] 
+           [{:key :f :modi :left_option} {:key :right_arrow :modi :left_option} :!iterm] 
+           [{:key :d :modi :left_option} {:key :delete_forward :modi [:left_option :fn]} :!iterm]]} 
+
+  {:des "Meh + h/j/k/l/n/p works like alt"
+   :rules [
+           [{:key :n :modi [:left_option :left_control :left_shift]} {:key :n :modi :left_option}]
+           [{:key :p :modi [:left_option :left_control :left_shift]} {:key :p :modi :left_option}]
+           [{:key :j :modi [:left_option :left_control :left_shift]} {:key :j :modi :left_option}]
+           [{:key :h :modi [:left_option :left_control :left_shift]} {:key :h :modi :left_option}]
+           [{:key :k :modi [:left_option :left_control :left_shift]} {:key :k :modi :left_option}]
+           [{:key :l :modi [:left_option :left_control :left_shift]} {:key :l :modi :left_option}]]}
+
+  {:des "Mouse button 4/5 for back/forward"
+   :rules [
+           [{:pkey :button4} {:key :open_bracket :modi :left_command}]
+           [{:pkey :button5} {:key :close_bracket :modi :left_command}]
+           [{:pkey :button4 :modi :left_shift} {:key :open_bracket :modi [:left_command :left_shift]}]
+           [{:pkey :button5 :modi :left_shift} {:key :close_bracket :modi [:left_command :left_shift]}]]}
+
+  {:des "Application shortcuts"
+   :rules [
+           [{:key :s :modi [:left_option :left_control :left_shift]} [:open "Safari"]]
+           [{:key :f :modi [:left_option :left_control :left_shift]} [:open "Firefox"]]
+           [{:key :v :modi [:left_option :left_control :left_shift]} [:open "Visual Studio Code"]]
+           [{:key :t :modi [:left_option :left_control :left_shift]} [:open "iTerm"]]
+           [{:key :n :modi [:left_option :left_control :left_shift]} [:open "Notes"]]
+           [{:key :d :modi [:left_option :left_control :left_shift]} [:open "TablePlus"]]
+           [{:key :w :modi [:left_option :left_control :left_shift]} [:open "Slack"]]
+           [{:key :m :modi [:left_option :left_control :left_shift]} [:open "Messages"]]
+           [{:key :a :modi [:left_option :left_control :left_shift]} [:open "Music"]]
+           [{:key :c :modi [:left_option :left_control :left_shift]} [:open "Postman"]]
+           [{:key :z :modi [:left_option :left_control :left_shift]} [:open "zoom.us"]]
+           [{:key :q :modi [:left_option :left_control :left_shift]} [:open "Notes"]]
+           [{:key :x :modi [:left_option :left_control :left_shift]} [:open "Notion"]]
+           [{:key :r :modi [:left_option :left_control :left_shift]} [:open "Linear"]]
+           [{:key :b :modi [:left_option :left_control :left_shift]} [:open "BBEdit"]]]}]}
+
+ 
