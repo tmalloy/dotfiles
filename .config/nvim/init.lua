@@ -60,4 +60,12 @@ vim.keymap.set("n", "<leader>ls", ":e <C-R>=expand('%:h').'/'<cr><cr>", { norema
 vim.cmd("set number")
 vim.keymap.set("n", "<c-n><c-n>", ":set invnumber<cr>", { noremap = true, silent = true })
 
+-- Shift blocks of text up and down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
+-- Indent blocks of text
+vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
+vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
+
 require("config.lazy")
