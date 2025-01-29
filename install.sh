@@ -11,6 +11,7 @@ ln -snf $SCRIPT_DIR/.config/git ~/.config/git
 ln -snf $SCRIPT_DIR/.config/tig ~/.config/tig
 ln -snf $SCRIPT_DIR/.config/tmux ~/.config/tmux
 ln -snf $SCRIPT_DIR/.config/zsh ~/.config/zsh
+ln -snf $SCRIPT_DIR/.config/atuin ~/.config/atuin
 
 mkdir -p ~/.config/karabiner
 ln -snf $SCRIPT_DIR/.config/karabiner.edn ~/.config/karabiner.edn
