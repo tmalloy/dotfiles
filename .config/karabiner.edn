@@ -26,14 +26,14 @@
            [{:key :f :modi :left_option} {:key :right_arrow :modi :left_option} :!iterm] 
            [{:key :d :modi :left_option} {:key :delete_forward :modi [:left_option :fn]} :!iterm]]} 
 
-  {:des "Meh + h/j/k/l/n/p works like alt"
-   :rules [
-           [{:key :n :modi [:left_option :left_control :left_shift]} {:key :n :modi :left_option}]
-           [{:key :p :modi [:left_option :left_control :left_shift]} {:key :p :modi :left_option}]
-           [{:key :j :modi [:left_option :left_control :left_shift]} {:key :j :modi :left_option}]
-           [{:key :h :modi [:left_option :left_control :left_shift]} {:key :h :modi :left_option}]
-           [{:key :k :modi [:left_option :left_control :left_shift]} {:key :k :modi :left_option}]
-           [{:key :l :modi [:left_option :left_control :left_shift]} {:key :l :modi :left_option}]]}
+  ; {:des "Meh + h/j/k/l/n/p works like alt"
+  ;  :rules [
+  ;          [{:key :n :modi [:left_option :left_control :left_shift]} {:key :n :modi :left_option}]
+  ;          [{:key :p :modi [:left_option :left_control :left_shift]} {:key :p :modi :left_option}]
+  ;          [{:key :j :modi [:left_option :left_control :left_shift]} {:key :j :modi :left_option}]
+  ;          [{:key :h :modi [:left_option :left_control :left_shift]} {:key :h :modi :left_option}]
+  ;          [{:key :k :modi [:left_option :left_control :left_shift]} {:key :k :modi :left_option}]
+  ;          [{:key :l :modi [:left_option :left_control :left_shift]} {:key :l :modi :left_option}]]}
 
   {:des "Mouse button 4/5 for back/forward"
    :rules [
@@ -48,16 +48,17 @@
            [{:key :f :modi [:left_option :left_control :left_shift]} [:open "Firefox"]]
            [{:key :v :modi [:left_option :left_control :left_shift]} [:open "Visual Studio Code"]]
            [{:key :t :modi [:left_option :left_control :left_shift]} [:open "iTerm"]]
-           [{:key :n :modi [:left_option :left_control :left_shift]} [:open "Notes"]]
            [{:key :d :modi [:left_option :left_control :left_shift]} [:open "TablePlus"]]
            [{:key :w :modi [:left_option :left_control :left_shift]} [:open "Slack"]]
            [{:key :m :modi [:left_option :left_control :left_shift]} [:open "Messages"]]
            [{:key :a :modi [:left_option :left_control :left_shift]} [:open "Music"]]
            [{:key :c :modi [:left_option :left_control :left_shift]} [:open "Postman"]]
            [{:key :z :modi [:left_option :left_control :left_shift]} [:open "zoom.us"]]
-           [{:key :q :modi [:left_option :left_control :left_shift]} [:open "Notes"]]
+           [{:key :g :modi [:left_option :left_control :left_shift]} [:open "Notes"]]
            [{:key :x :modi [:left_option :left_control :left_shift]} [:open "Notion"]]
            [{:key :r :modi [:left_option :left_control :left_shift]} [:open "Linear"]]
+           [{:key :e :modi [:left_option :left_control :left_shift]} [:open "Notion Calendar"]]
+           [{:key :q :modi [:left_option :left_control :left_shift]} [:open "Claude"]]
            [{:key :b :modi [:left_option :left_control :left_shift]} [:open "BBEdit"]]]}]}
 
  

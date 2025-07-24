@@ -59,81 +59,6 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "Meh + h/j/k/l/n/p works like alt",
-        "manipulators" : [ {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_control", "left_shift" ]
-            },
-            "key_code" : "n"
-          },
-          "to" : [ {
-            "modifiers" : [ "left_option" ],
-            "key_code" : "n"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_control", "left_shift" ]
-            },
-            "key_code" : "p"
-          },
-          "to" : [ {
-            "modifiers" : [ "left_option" ],
-            "key_code" : "p"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_control", "left_shift" ]
-            },
-            "key_code" : "j"
-          },
-          "to" : [ {
-            "modifiers" : [ "left_option" ],
-            "key_code" : "j"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_control", "left_shift" ]
-            },
-            "key_code" : "h"
-          },
-          "to" : [ {
-            "modifiers" : [ "left_option" ],
-            "key_code" : "h"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_control", "left_shift" ]
-            },
-            "key_code" : "k"
-          },
-          "to" : [ {
-            "modifiers" : [ "left_option" ],
-            "key_code" : "k"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_control", "left_shift" ]
-            },
-            "key_code" : "l"
-          },
-          "to" : [ {
-            "modifiers" : [ "left_option" ],
-            "key_code" : "l"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
         "description" : "Mouse button 4/5 for back/forward",
         "manipulators" : [ {
           "from" : {
@@ -229,17 +154,6 @@
             "modifiers" : {
               "mandatory" : [ "left_option", "left_control", "left_shift" ]
             },
-            "key_code" : "n"
-          },
-          "to" : [ {
-            "shell_command" : "open -a \"Notes\""
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "modifiers" : {
-              "mandatory" : [ "left_option", "left_control", "left_shift" ]
-            },
             "key_code" : "d"
           },
           "to" : [ {
@@ -306,7 +220,7 @@
             "modifiers" : {
               "mandatory" : [ "left_option", "left_control", "left_shift" ]
             },
-            "key_code" : "q"
+            "key_code" : "g"
           },
           "to" : [ {
             "shell_command" : "open -a \"Notes\""
@@ -332,6 +246,28 @@
           },
           "to" : [ {
             "shell_command" : "open -a \"Linear\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "e"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Notion Calendar\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "modifiers" : {
+              "mandatory" : [ "left_option", "left_control", "left_shift" ]
+            },
+            "key_code" : "q"
+          },
+          "to" : [ {
+            "shell_command" : "open -a \"Claude\""
           } ],
           "type" : "basic"
         }, {
