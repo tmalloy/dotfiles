@@ -12,6 +12,7 @@ ln -snf $SCRIPT_DIR/.config/tig ~/.config/tig
 ln -snf $SCRIPT_DIR/.config/tmux ~/.config/tmux
 ln -snf $SCRIPT_DIR/.config/zsh ~/.config/zsh
 ln -snf $SCRIPT_DIR/.config/atuin ~/.config/atuin
+ln -snf $SCRIPT_DIR/.config/starship.toml ~/.config/starship.toml
 
 mkdir -p ~/.config/karabiner
 ln -snf $SCRIPT_DIR/.config/karabiner.edn ~/.config/karabiner.edn
