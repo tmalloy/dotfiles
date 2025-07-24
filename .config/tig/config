@@ -48,6 +48,8 @@ bind status U !git stash pop
 bind status o @sh -c "open https://github.com/Nikola-Software/TeslaMonitor/compare/$(git rev-parse --abbrev-ref HEAD)?expand=1"
 bind status F !git commit --amend --no-edit
 bind status P !sh -c "git push --force --set-upstream origin +$(git rev-parse --abbrev-ref HEAD):$(git rev-parse --abbrev-ref HEAD)"
+bind status c +git rebase --continue
+bind status a +git rebase --abort
 
 set main-view-date = relative
 bind main Y @sh -c "printf %(commit) | pbcopy"
