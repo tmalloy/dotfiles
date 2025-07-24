@@ -9,6 +9,16 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+vim.cmd.filetype("on")
+vim.cmd.filetype("plugin on")
+
+
+-- vim.cm
+-- alias ez="nvim ~/.zshrc"
+-- alias ev="nvim ~/.config/nvim/init.lua"
+vim.keymap.set("n", "<leader>ev", ":e ~/.config/nvim/init.lua<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ez", ":e ~/.zshrc<cr>", { noremap = true, silent = true })
+
 
 vim.keymap.set("i", "jk", "<esc>", { noremap = true, silent = true })
 vim.keymap.set("i", "Jk", "<esc>", { noremap = true, silent = true })
@@ -17,6 +27,8 @@ vim.keymap.set("i", "JK", "<esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>w", ":w<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>q", ":q!<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>x", ":x<cr>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "H", "0", { noremap = true, silent = true })
 
 --
 -- buffers
@@ -67,5 +79,15 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 -- Indent blocks of text
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
+
+-- LSPs
+-- vim.lsp.config('clojure-lsp', {
+--   -- Server-specific settings. See `:help lsp-quickstart`
+--   settings = {
+--     ['clojure-lsp'] = {},
+--   },
+-- })
+-- vim.lsp.enable('clojure-lsp')
+
 
 require("config.lazy")
