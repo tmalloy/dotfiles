@@ -3,6 +3,7 @@
 SCRIPT_DIR=`pwd`
 
 ln -snf $SCRIPT_DIR/.zshrc ~/.zshrc
+ln -snf $SCRIPT_DIR/.zshenv ~/.zshenv
 ln -snf $SCRIPT_DIR/bin ~/bin
 
 mkdir -p ~/.config

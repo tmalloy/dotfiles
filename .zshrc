@@ -9,6 +9,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # For 1Password ssh integration
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+export OP_BIOMETRIC_UNLOCK_ENABLED=true
 
 # https://github.com/junegunn/fzf
 eval "$(fzf --zsh)"
@@ -19,11 +20,11 @@ eval "$(atuin init zsh)"
 # Smarter cd: z, autojump
 eval "$(zoxide init zsh)"
 
-# https://github.com/jdx/mise
-eval "$(mise activate zsh)"
-
 # prompt https://starship.rs
 eval "$(starship init zsh)"
+
+alias kp='kubectl -n production --context gke_sf-2021-production-common_us-west1_production'
+
 # source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 # source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
