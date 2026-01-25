@@ -1,6 +1,8 @@
 return {
   "ggandor/leap.nvim",
-  config = function()
-    require('leap').create_default_mappings()
-  end
+  keys = {
+    {'s', '<Plug>(leap)', mode = {'n', 'x', 'o'}},
+    {'S', '<Plug>(leap-from-window)', mode = { 'n' }},
+  }
 }
+
