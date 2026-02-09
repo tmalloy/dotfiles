@@ -17,6 +17,7 @@ ln -snf $SCRIPT_DIR/.config/starship.toml ~/.config/starship.toml
 ln -snf $SCRIPT_DIR/.config/clojure ~/.config/clojure
 ln -snf $SCRIPT_DIR/.config/clj-kondo ~/.config/clj-kondo
 ln -snf $SCRIPT_DIR/.config/mise ~/.config/mise
+ln -snf $SCRIPT_DIR/.config/ghostty ~/.config/ghostty
 
 mkdir -p ~/.config/karabiner
 ln -snf $SCRIPT_DIR/.config/karabiner.edn ~/.config/karabiner.edn
@@ -24,3 +25,4 @@ ln -snf $SCRIPT_DIR/.config/karabiner/karabiner.json ~/.config/karabiner/karabin
 
 mkdir -p ~/.dotfiles/Library/Application\ Support/Code/User
 ln -snf $SCRIPT_DIR/Library/Application\ Support/Code/User/settings.json ~/Library/Application\ Support/Code/User
+
