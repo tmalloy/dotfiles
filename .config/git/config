@@ -37,8 +37,6 @@
 	inputScrollStepDown = Control+d
 	inputScrollStepUp = Control+u
 	inputRebase = w
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
