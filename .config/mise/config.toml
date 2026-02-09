@@ -1,0 +1,18 @@
+[tools]
+node = '22'
+python = '3.13'
+pipx = 'latest' # required by ansible
+ansible = 'latest'
+babashka = 'latest'
+clojure = 'latest'
+neovim = 'latest'
+starship = 'latest'
+atuin = 'latest'
+fzf = 'latest'
+zoxide = 'latest'
+terraform = 'latest'
+ffmpeg = 'latest'
+
+[settings]
+idiomatic_version_file_enable_tools = []
+

@@ -16,6 +16,7 @@ ln -snf $SCRIPT_DIR/.config/atuin ~/.config/atuin
 ln -snf $SCRIPT_DIR/.config/starship.toml ~/.config/starship.toml
 ln -snf $SCRIPT_DIR/.config/clojure ~/.config/clojure
 ln -snf $SCRIPT_DIR/.config/clj-kondo ~/.config/clj-kondo
+ln -snf $SCRIPT_DIR/.config/mise ~/.config/mise
 
 mkdir -p ~/.config/karabiner
 ln -snf $SCRIPT_DIR/.config/karabiner.edn ~/.config/karabiner.edn
