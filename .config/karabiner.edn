@@ -15,16 +15,17 @@
 ; Rune `gokuw` to watch for changes
 
 {
- :applications {:iterm ["^com\\.googlecode\\.iterm2$"]}
+ :applications {:any-terminal ["^com\\.googlecode\\.iterm2$" 
+                               "^com\\.mitchellh\\.ghostty$"]}
 
  :templates {:open "open -a \"%s\""}
 
  :main
  [{:des "Alt b/f for word-wise movement"
    :rules [
-           [{:key :b :modi :left_option} {:key :left_arrow :modi :left_option} :!iterm] 
-           [{:key :f :modi :left_option} {:key :right_arrow :modi :left_option} :!iterm] 
-           [{:key :d :modi :left_option} {:key :delete_forward :modi [:left_option :fn]} :!iterm]]} 
+           [{:key :b :modi :left_option} {:key :left_arrow :modi :left_option} :!any-terminal] 
+           [{:key :f :modi :left_option} {:key :right_arrow :modi :left_option} :!any-terminal] 
+           [{:key :d :modi :left_option} {:key :delete_forward :modi [:left_option :fn]} :!any-terminal]]} 
 
   ; {:des "Meh + h/j/k/l/n/p works like alt"
   ;  :rules [
@@ -45,9 +46,9 @@
   {:des "Application shortcuts"
    :rules [
            [{:key :s :modi [:left_option :left_control :left_shift]} [:open "Safari"]]
-           [{:key :f :modi [:left_option :left_control :left_shift]} [:open "Firefox"]]
+           [{:key :f :modi [:left_option :left_control :left_shift]} [:open "Zen"]]
            [{:key :v :modi [:left_option :left_control :left_shift]} [:open "Visual Studio Code"]]
-           [{:key :t :modi [:left_option :left_control :left_shift]} [:open "iTerm"]]
+           [{:key :t :modi [:left_option :left_control :left_shift]} [:open "Ghostty"]]
            [{:key :d :modi [:left_option :left_control :left_shift]} [:open "TablePlus"]]
            [{:key :w :modi [:left_option :left_control :left_shift]} [:open "Slack"]]
            [{:key :m :modi [:left_option :left_control :left_shift]} [:open "Messages"]]
@@ -59,6 +60,6 @@
            [{:key :r :modi [:left_option :left_control :left_shift]} [:open "Linear"]]
            [{:key :e :modi [:left_option :left_control :left_shift]} [:open "Notion Calendar"]]
            [{:key :q :modi [:left_option :left_control :left_shift]} [:open "Claude"]]
-           [{:key :b :modi [:left_option :left_control :left_shift]} [:open "BBEdit"]]]}]}
+           [{:key :b :modi [:left_option :left_control :left_shift]} [:open "Reminders"]]]}]}
 
  

@@ -22,7 +22,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$", "^com\\.mitchellh\\.ghostty$" ]
           } ],
           "type" : "basic"
         }, {
@@ -38,7 +38,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$", "^com\\.mitchellh\\.ghostty$" ]
           } ],
           "type" : "basic"
         }, {
@@ -54,7 +54,7 @@
           } ],
           "conditions" : [ {
             "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$" ]
+            "bundle_identifiers" : [ "^com\\.googlecode\\.iterm2$", "^com\\.mitchellh\\.ghostty$" ]
           } ],
           "type" : "basic"
         } ]
@@ -124,7 +124,7 @@
             "key_code" : "f"
           },
           "to" : [ {
-            "shell_command" : "open -a \"Firefox\""
+            "shell_command" : "open -a \"Zen\""
           } ],
           "type" : "basic"
         }, {
@@ -146,7 +146,7 @@
             "key_code" : "t"
           },
           "to" : [ {
-            "shell_command" : "open -a \"iTerm\""
+            "shell_command" : "open -a \"Ghostty\""
           } ],
           "type" : "basic"
         }, {
@@ -278,7 +278,7 @@
             "key_code" : "b"
           },
           "to" : [ {
-            "shell_command" : "open -a \"BBEdit\""
+            "shell_command" : "open -a \"Reminders\""
           } ],
           "type" : "basic"
         } ]
