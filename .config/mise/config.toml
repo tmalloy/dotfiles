@@ -1,8 +1,9 @@
 [tools]
-node = '22'
-python = '3.13'
-pipx = 'latest' # required by ansible
-ansible = 'latest'
+# node = '22'
+python = '3.14'
+uv = 'latest'
+# pipx = 'latest' # required by ansible
+# ansible = 'latest'
 babashka = 'latest'
 clojure = 'latest'
 neovim = 'latest'
@@ -11,8 +12,15 @@ atuin = 'latest'
 fzf = 'latest'
 zoxide = 'latest'
 terraform = 'latest'
-ffmpeg = 'latest'
+tmux = 'latest'
+'github:MitMaro/git-interactive-rebase-tool' = 'latest'
+# pnpm = 'latest'
+ripgrep = 'latest'
+java = 'openjdk-21'
+grpcurl = 'latest'
+gcloud = 'latest'
+# gradle = 'latest'
 
 [settings]
 idiomatic_version_file_enable_tools = []
-
+install_before = "30d"

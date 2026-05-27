@@ -25,4 +25,7 @@ ln -snf $SCRIPT_DIR/.config/karabiner/karabiner.json ~/.config/karabiner/karabin
 
 mkdir -p ~/.dotfiles/Library/Application\ Support/Code/User
 ln -snf $SCRIPT_DIR/Library/Application\ Support/Code/User/settings.json ~/Library/Application\ Support/Code/User
+ln -snf $SCRIPT_DIR/Library/Application\ Support/Code/User/keybindings.json ~/Library/Application\ Support/Code/User
+
+# ln -snf $SCRIPT_DIR/Library/Application\ Support/com.mitchellh.ghostty ~/Library/Application\ Support/com.mitchellh.ghostty
 

@@ -26,7 +26,7 @@
 [color]
     ui = auto
 [sequence]
-	editor = interactive-rebase-tool
+	editor = git-interactive-rebase-tool
 [interactive-rebase-tool]
 	inputMoveDown = j
 	inputMoveUp = k
@@ -42,3 +42,8 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

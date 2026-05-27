@@ -1,3 +1,4 @@
+-- Explore filesystem in a vim buffer
 -- https://github.com/stevearc/oil.nvim?tab=readme-ov-file
 return {
   'stevearc/oil.nvim',

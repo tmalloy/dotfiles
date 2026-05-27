@@ -12,11 +12,13 @@ vim.g.maplocalleader = ","
 vim.cmd.filetype("on")
 vim.cmd.filetype("plugin on")
 
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- vim.cm
 -- alias ez="nvim ~/.zshrc"
 -- alias ev="nvim ~/.config/nvim/init.lua"
 vim.keymap.set("n", "<leader>ev", ":e ~/.config/nvim/init.lua<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ep", ":e ~/.config/nvim/lua/plugins<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ez", ":e ~/.zshrc<cr>", { noremap = true, silent = true })
 
 

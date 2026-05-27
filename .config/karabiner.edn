@@ -46,7 +46,7 @@
   {:des "Application shortcuts"
    :rules [
            [{:key :s :modi [:left_option :left_control :left_shift]} [:open "Safari"]]
-           [{:key :f :modi [:left_option :left_control :left_shift]} [:open "Zen"]]
+           [{:key :f :modi [:left_option :left_control :left_shift]} [:open "Firefox"]]
            [{:key :v :modi [:left_option :left_control :left_shift]} [:open "Visual Studio Code"]]
            [{:key :t :modi [:left_option :left_control :left_shift]} [:open "Ghostty"]]
            [{:key :d :modi [:left_option :left_control :left_shift]} [:open "TablePlus"]]
@@ -55,7 +55,7 @@
            [{:key :a :modi [:left_option :left_control :left_shift]} [:open "Music"]]
            [{:key :c :modi [:left_option :left_control :left_shift]} [:open "Postman"]]
            [{:key :z :modi [:left_option :left_control :left_shift]} [:open "zoom.us"]]
-           [{:key :g :modi [:left_option :left_control :left_shift]} [:open "Notes"]]
+           [{:key :g :modi [:left_option :left_control :left_shift]} [:open "Notion Mail"]]
            [{:key :x :modi [:left_option :left_control :left_shift]} [:open "Notion"]]
            [{:key :r :modi [:left_option :left_control :left_shift]} [:open "Linear"]]
            [{:key :e :modi [:left_option :left_control :left_shift]} [:open "Notion Calendar"]]

@@ -14,71 +14,71 @@
   "vim.replaceWithRegister": true,
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
   "vscode-neovim.compositeKeys": {
     "jk": {
-      "command": "vscode-neovim.escape"
-    }
+      "command": "vscode-neovim.escape",
+    },
   },
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
+      "after": ["<Esc>"],
+    },
   ],
   "vim.normalModeKeyBindings": [
     {
       "before": ["<ctrl>", "s"],
-      "commands": ["workbench.action.files.save"]
+      "commands": ["workbench.action.files.save"],
     },
     {
       "before": ["<leader>", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "commands": ["workbench.action.quickOpen"],
     },
     {
       "before": ["<leader>", "b"],
       "commands": [
-        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-      ]
+        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+      ],
     },
     {
       "before": ["<leader>", "<leader>"],
-      "commands": ["extension.goto-previous-buffer"]
+      "commands": ["extension.goto-previous-buffer"],
     },
     {
       "before": ["<ctrl>", "c"],
-      "after": ["<Esc>"]
+      "after": ["<Esc>"],
     },
     {
       "before": ["H"],
-      "after": ["^"]
+      "after": ["^"],
     },
     {
       "before": ["Y"],
-      "after": ["v", "$", "h", "y"]
+      "after": ["v", "$", "h", "y"],
     },
     {
       "before": ["<leader>", "x"],
       "commands": [
         "workbench.action.files.save",
-        "workbench.action.closeActiveEditor"
-      ]
+        "workbench.action.closeActiveEditor",
+      ],
     },
     {
       "before": ["<leader>", "c", "l"],
-      "commands": ["editor.action.commentLine"]
+      "commands": ["editor.action.commentLine"],
     },
     {
       "before": ["<leader>", "b", "d"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    }
+      "commands": ["workbench.action.closeActiveEditor"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": ["<leader>", "c"],
-      "commands": ["editor.action.commentLine"]
-    }
+      "commands": ["editor.action.commentLine"],
+    },
   ],
   "vim.commandLineModeKeyBindings": [],
   "settingsSync.ignoredExtensions": [],
@@ -97,7 +97,7 @@
   "gitlens.telemetry.enabled": false,
   "stripe.telemetry.enabled": false,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "remote.localPortHost": "allInterfaces",
   "extensions.ignoreRecommendations": true,
@@ -106,11 +106,12 @@
   // "remote.SSH.showLoginTerminal": true,
   // "remote.SSH.useLocalServer": false,
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[python]": {
     "editor.tabSize": 4,
-    "editor.defaultFormatter": "charliermarsh.ruff"
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": false,
   },
   "editor.accessibilitySupport": "off",
   "github.copilot.editor.enableAutoCompletions": true,
@@ -118,22 +119,22 @@
   "makefile.configureOnOpen": true,
   "dart.flutterSdkPath": "/Users/tmalloy/development/flutter_sdk_3.22.3",
   "dart.openDevTools": "flutter",
-  "[proto3]": {
-    "editor.defaultFormatter": "zxh404.vscode-proto3"
-  },
+  // "[protobuf]": {
+  //   "editor.defaultFormatter": "drblury.protobuf-vsc",
+  // },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "debug.onTaskErrors": "abort",
   "vs-kubernetes": {
-    "vs-kubernetes.crd-code-completion": "disabled"
+    "vs-kubernetes.crd-code-completion": "disabled",
   },
   "[clojure]": {
     "editor.defaultFormatter": "betterthantomorrow.calva",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   // Why doesn't this override workspace settings?
   // "[go]": {
@@ -144,21 +145,21 @@
     // Choose folder to open on new window
     {
       "name": "zoxide",
-      "command": "cursor $(zoxide query --interactive)"
-    }
+      "command": "cursor $(zoxide query --interactive)",
+    },
   ],
   // Allow top open a file with line number
   "fzf-picker.general.openCommand": "code -g",
   "chat.agent.enabled": true,
   "github.copilot.chat.agent.thinkingTool": true,
   "task.problemMatchers.neverPrompt": {
-    "process": true
+    "process": true,
   },
   "github.copilot.advanced": {},
   "terminal.integrated.defaultProfile.osx": "zsh",
   "remote.SSH.remotePlatform": {
     "*.gitpod.local": "linux",
-    "*.gitpod.remote": "linux"
+    "*.gitpod.remote": "linux",
   },
   "docker.extension.enableComposeLanguageServer": false,
   "terminal.integrated.scrollback": 50000,
@@ -169,12 +170,17 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
-      "strings": true
+      "strings": true,
     },
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
-  "diffEditor.maxComputationTime": 0
+  "diffEditor.maxComputationTime": 0,
+  "claudeCode.preferredLocation": "panel",
+  "kotlin.languageServer.enabled": false,
+  "kotlin.debugAdapter.enabled": false,
+  "terminal.integrated.initialHint": false,
+  "chat.disableAIFeatures": true,
 }

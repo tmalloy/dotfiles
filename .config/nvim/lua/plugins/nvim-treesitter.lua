@@ -1,3 +1,5 @@
+-- NEEDS UPDATES: https://github.com/nvim-treesitter/nvim-treesitter/discussions/8357
+
 -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 -- https://www.lazyvim.org/plugins/treesitter#nvim-treesitter
 return {
@@ -7,7 +9,7 @@ return {
     { "nvim-treesitter/nvim-treesitter-textobjects" },
   },
   config = function()
-    require('nvim-treesitter.configs').setup {
+    require('nvim-treesitter.config').setup {
       ensure_installed = {
         "bash",
         "c",
