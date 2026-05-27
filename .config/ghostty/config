@@ -3,6 +3,8 @@
 # * Enough contrast in tig commits view for highlighted commit
 theme = synthwave
 
+confirm-close-surface = false
+
 
 # This is the configuration file for Ghostty.
 #
