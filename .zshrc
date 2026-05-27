@@ -12,7 +12,13 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 export OP_BIOMETRIC_UNLOCK_ENABLED=true
 
 # https://github.com/junegunn/fzf
-eval "$(fzf --zsh)"
+# `fzf --zsh` needs fzf >= 0.48; fall back to shipped scripts on older versions
+if fzf --zsh >/dev/null 2>&1; then
+  eval "$(fzf --zsh)"
+elif [ -d /usr/share/doc/fzf/examples ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 # Stores command history
 eval "$(atuin init zsh)"
@@ -22,6 +28,8 @@ eval "$(zoxide init zsh)"
 
 # prompt https://starship.rs
 eval "$(starship init zsh)"
+
+eval "$(mise activate zsh)"
 
 alias kp='kubectl -n production --context gke_sf-2021-production-common_us-west1_production'
 
