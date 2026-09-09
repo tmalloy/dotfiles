@@ -13,7 +13,7 @@
     mg = merge
     cp = cherry-pick
 [push]
-	default = upstream
+	default = simple
 [pull]
   rebase = true
 [rebase]
@@ -47,3 +47,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[branch]
+	autoSetupMerge = simple
