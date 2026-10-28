@@ -5,6 +5,10 @@ theme = synthwave
 
 confirm-close-surface = false
 
+# for tmux inside ssh sessions to work well
+macos-option-as-alt = true
+shell-integration-features = ssh-terminfo
+
 
 # This is the configuration file for Ghostty.
 #

@@ -13,14 +13,18 @@ fzf = 'latest'
 zoxide = 'latest'
 terraform = 'latest'
 tmux = 'latest'
-'github:MitMaro/git-interactive-rebase-tool' = 'latest'
+# asset names use _arm/_intel, so mise autodetect picks the intel build on apple silicon
+'github:MitMaro/git-interactive-rebase-tool' = { version = '2.4.1', platforms = { macos-arm64 = { asset_pattern = 'git-interactive-rebase-tool-*-macos-14_arm' } } }
 # pnpm = 'latest'
 ripgrep = 'latest'
 java = 'openjdk-21'
 grpcurl = 'latest'
 gcloud = 'latest'
 # gradle = 'latest'
+age = 'latest'
+'aqua:peteretelej/tree' = '1.3.0'
+'github:tmalloy/tig' = 'tig-2.6.1-tmalloy.1'
 
 [settings]
 idiomatic_version_file_enable_tools = []
-install_before = "30d"
+minimum_release_age = "30d"
