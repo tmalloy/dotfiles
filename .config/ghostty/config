@@ -7,7 +7,7 @@ confirm-close-surface = false
 
 # for tmux inside ssh sessions to work well
 macos-option-as-alt = true
-shell-integration-features = ssh-terminfo
+shell-integration-features = ssh-env,ssh-terminfo
 
 
 # This is the configuration file for Ghostty.
